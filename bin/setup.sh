@@ -13,13 +13,13 @@ git submodule update
 
 case `uname` in
   Darwin)
-    dotfiles/bin/make_symlinks_osx.sh
+    bin/make_symlinks_osx.sh
     ;;
   Linux)
-    dotfiles/bin/make_symlinks_lin.sh
+    bin/make_symlinks_lin.sh
     ;;
   CYGWIN_NT*)
-    dotfiles/bin/make_symlinks_win.bat
+    bin/make_symlinks_win.bat
     ;;
   *)
     ;;
