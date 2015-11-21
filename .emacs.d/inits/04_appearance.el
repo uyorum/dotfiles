@@ -36,6 +36,7 @@
              '(".*Code JP.*" . 1.2))
 
 ;; Color theme
+(el-get-bundle! color-theme)
 (el-get-bundle! color-theme-solarized)
 
 ;; 背景色の設定

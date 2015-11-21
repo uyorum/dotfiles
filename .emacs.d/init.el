@@ -12,8 +12,12 @@
     (eval-print-last-sexp)))
 
 ;; el-getでインストールするelispのバージョンを固定する
-(el-get-bundle tarao/el-get-lock)
+(el-get-bundle! tarao/el-get-lock)
 (el-get-lock)
+(el-get-lock-unlock 'color-theme)
+(el-get-lock-unlock 'key-chord)
+(el-get-lock-unlock 'sequential-command-config)
+(el-get-lock-unlock 'magit)
 
 ;; init-loader
 (el-get-bundle! init-loader)
