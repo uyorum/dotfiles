@@ -1,0 +1,32 @@
+source! ~/.vimperatorrc.local
+
+" vim: set ft=vimperator:
+
+set titlestring="Mozilla Firefox"
+set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set hintchars="asdfghjkl;"
+set complete=l
+set editor=emacsclient
+set tabnumbers
+
+"Key mapping
+map <C-h> <A-left>
+map <C-l> <A-right>
+cmap <C-j> <Nop>
+map j 5<C-e>
+map k 5<C-y>
+"map <C-n> <Nop>
+"map <C-p> <Nop>
+
+"
+" Plugin
+"
+" copy.js
+javascript <<EOM
+  liberator.globalVariables.copy_templates = [
+    { label: 'title', value: '%TITLE%' },
+    { label: 'plain', value: '%TITLE% %URL%' },
+    { label: 'anchor', value: '<a href="%URL%">%TITLE%</a>' },
+    { label: 'markdown', value: '[%TITLE%](%URL%)' },
+  ];
+EOM
