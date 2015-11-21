@@ -7,6 +7,7 @@
 
 # Vim
 .vim/bundle/*
+!.vim/bundle/neobundle.vim
 .vim/.netrwhist
 
 # Xmonad
@@ -16,6 +17,7 @@
 
 # Zsh
 .zsh/antigen/*
+!.zsh/antigen/antigen
 
 .fonts
 
