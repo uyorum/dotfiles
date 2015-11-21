@@ -19,6 +19,9 @@
 .zsh/antigen/*
 !.zsh/antigen/antigen
 
-.fonts
+# Chef
+.berkshelf/cookbooks
+.kitchen/logs
 
+.fonts
 */cifs*
