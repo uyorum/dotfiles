@@ -10,10 +10,10 @@ antigen bundles <<EOF
 EOF
 
 # load configuration files
-for f in ~/.zsh/[0-9][0-9]_*.(zsh|sh); do
+for f in ~/.zsh/inits/[0-9][0-9]_*.(zsh|sh); do
   source "$f"
 done
-for f in ~/.zsh/`echo $OS`_*.(zsh|sh); do
+for f in ~/.zsh/inits/`echo $OS`_*.(zsh|sh); do
   source "$f"
 done
 
