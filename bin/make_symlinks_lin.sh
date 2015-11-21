@@ -1,0 +1,17 @@
+#!/bin/bash
+
+while read line; do
+  ln -s $line
+done <<-EOF
+  dotfiles/.berkshelf $HOME
+  dotfiles/.emacs.d $HOME
+  dotfiles/.gemrc $HOME
+  dotfiles/.gitconfig $HOME
+  dotfiles/.kitchen $HOME
+  dotfiles/.tmux.conf $HOME
+  dotfiles/.vim $HOME
+  dotfiles/.vimrc $HOME
+  dotfiles/.zsh $HOME
+  dotfiles/.zshenv $HOME
+  dotfiles/.zshrc $HOME
+EOF
