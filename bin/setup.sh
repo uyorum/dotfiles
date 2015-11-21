@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if which git >/dev/null; then
+if ! which git >/dev/null; then
   echo "command not found: git"
   exit 1
 fi
