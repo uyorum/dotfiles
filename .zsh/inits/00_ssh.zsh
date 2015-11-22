@@ -1,3 +1,6 @@
+if in-tmux; then
+  return
+fi
 if [ -f ~/bin/address ]; then
   address=`cat ~/bin/address`
   if [ ! -f ~/.ssh/config.work ]; then

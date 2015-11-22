@@ -1,3 +1,8 @@
+# Load common functions
+for f in ~/.zsh/lib/*.(zsh|sh); do
+  source "$f"
+done
+
 # Plugins
 export ADOTDIR=~/.zsh/antigen
 source ${ADOTDIR}/antigen/antigen.zsh
@@ -9,7 +14,7 @@ antigen bundles <<EOF
   zsh-users/zaw
 EOF
 
-# load configuration files
+# Load configuration files
 for f in ~/.zsh/inits/[0-9][0-9]_*.(zsh|sh); do
   source "$f"
 done
