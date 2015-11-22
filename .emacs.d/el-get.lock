@@ -1,5 +1,7 @@
 (setq el-get-lock-package-versions
-      '((emacs-emojify :checksum "cf4f7a4a141691cb269b78d8873513d28b039580")
+      '((helm-gtags :checksum "68acd9a1b7e1197fd09971c54c0afc066155579e")
+        (gtags :checksum "6b418af3eb47d396329ea0d10cd632653e8e4204")
+        (emacs-emojify :checksum "cf4f7a4a141691cb269b78d8873513d28b039580")
         (tabbar-ruler :checksum "5854ef040a1c45e1ce7dfebea6ed7953ce6bd2b9")
         (color-theme-solarized :checksum "412713a0fcedd520d208a7b783fea03d710bcc61")
         (dockerfile-mode :checksum "cfa634ff1dd9b4414d7e42cd1d5de9b8b6fbd56d")

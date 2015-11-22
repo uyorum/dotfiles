@@ -7,6 +7,7 @@ done <<-EOF
   dotfiles/.emacs.d $HOME
   dotfiles/.gemrc $HOME
   dotfiles/.gitconfig $HOME
+  dotfiles/.globalrc $HOME
   dotfiles/.kitchen $HOME
   dotfiles/.tmux.conf $HOME
   dotfiles/.vim $HOME
