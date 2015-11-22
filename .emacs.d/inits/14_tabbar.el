@@ -9,8 +9,9 @@
 ;; C-t C-n/C-p でタブ遷移
 ;; 表示されているタブでループさせる
 (global-unset-key "\C-t")
+(global-set-key (kbd "\C-c t") 'tabbar-ruler-move)
 (global-set-key (kbd "\C-t\C-t") 'tabbar-ruler-move)
-(global-set-key (kbd "\C-t\C-n") 'tabbar-forward-tab)
+(global-set-key (kbd "\C-t\C-n") 'tabbar-forward-tb)
 (global-set-key (kbd "\C-t\C-p") 'tabbar-backward-tab)
 (global-set-key (kbd "\C-t\C-f") 'tabbar-forward-group)
 (global-set-key (kbd "\C-t\C-b") 'tabbar-backward-group)
