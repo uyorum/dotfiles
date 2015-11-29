@@ -13,13 +13,8 @@ alias grep='grep --color=auto'
 alias sudo='sudo -E'
 
 alias nscript='script "$HOME/log/`date +"%Y-%m-%d-%H%M%S"`_`whoami`_$(hostname -s).log"'
-alias gcommit='git commit -m "`date +"%Y/%m/%d-%H:%M"`_`whoami`@$(hostname -s)"'
-mkwork() {
-  local workdir=$WORKSPACE/`date +%Y%m%d`_$1
-  mkdir -p $workdir && cd $workdir
-}
 
-alias be='bundle exec'
+alias gcommit='git commit -m "`date +"%Y/%m/%d-%H:%M"`_`whoami`@$(hostname -s)"'
 
 # ghq
 ghq-cd() {
@@ -28,21 +23,13 @@ ghq-cd() {
 zle -N ghq-cd
 bindkey '^]' ghq-cd
 
-case $OS in
-  osx)
-    alias ls='ls -G'
-    alias emacs='~/Applications/Emacs.app/Contents/MacOS/bin/emacs'
-    alias emacsclient='~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
-    alias e='emacsclient -n'
-    ;;
-  linux)
-    alias ls='ls --color=auto'
-    ;;
-  windows)
-    alias ls='ls --color=auto'
-    alias tmux='rm -rf /tmp/tmux* ; tmux'
-    alias open='cygstart'
-    ;;
-  *)
-    ;;
-esac
+# Ruby
+alias be='bundle exec'
+
+# Python
+if `which python3 >/dev/null`; then
+  alias python=python3
+fi
+if `which pip3 >/dev/null`; then
+  alias pip=pip3
+fi

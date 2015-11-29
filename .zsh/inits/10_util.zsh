@@ -42,23 +42,3 @@ setopt auto_pushd
 
 # compacked complete list display
 setopt list_packed
-
-case "$OS" in
-  "windows" | "linux")
-    # set current directry as screen title and auto `ls` after `cd`↲
-    function chpwd() {
-      ls --color=auto
-      if [ "$TERM" = "screen" ]; then
-        echo -n "k[`basename $PWD`]\\"
-      fi
-    }
-    ;;
-  *)
-    # set current directry as screen title and auto `ls` after `cd`↲
-    function chpwd() {
-      ls -G
-      if [ "$TERM" = "screen" ]; then
-        echo -n "k[`basename $PWD`]\\"
-      fi
-    }
-esac

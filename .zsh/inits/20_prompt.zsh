@@ -1,4 +1,4 @@
-# VCSの情報を取得するzshの便利関数 vcs_infoを使う
+# VCSの情報を取得するzshの関数 vcs_infoを使う
 autoload -Uz vcs_info
 
 # 表示フォーマットの指定

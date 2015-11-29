@@ -8,7 +8,7 @@ run-emacs-daemon() {
     return 0
   fi
   if ! emacsclient -e "(version)" >/dev/null 2>&1; then
-    echo "There is not emacs daemon. Starting..."
+    echo "There is not emacs daemon running. Starting..."
     emacs --daemon
   fi
 }
