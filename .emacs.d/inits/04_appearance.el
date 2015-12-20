@@ -28,11 +28,7 @@
 ;; (cancel-timer global-hl-line-timer)
 
 ;; フォントの設定
-(set-face-attribute 'default nil :font "源ノ角ゴシック Code JP R" :height 130)
-
-;; 半角と全角の比を1:2に
-(add-to-list 'face-font-rescale-alist
-             '(".*Code JP.*" . 1.2))
+(set-face-attribute 'default nil :font "源ノ角ゴシック Code JP R" :height 110)
 
 ;; Color theme
 (set-frame-parameter nil 'background-mode 'dark)
