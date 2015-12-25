@@ -34,6 +34,7 @@
     (kill-process (get-buffer-process "*goskk*"))
     (message "Server disconnected")))
 ;; Emacs終了時
+(remove-hook 'kill-emacs-hook 'skk-disconnect-server)
 (add-hook 'kill-emacs-hook 'my:skk-close-server)
 ;; Emacs起動時に起動するSKKサーバを使う
 (setq skk-server-inhibit-startup-server nil)
