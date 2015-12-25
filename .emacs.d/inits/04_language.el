@@ -5,6 +5,8 @@
 (set-language-environment 'utf-8)
 ;; 改行コード LF
 (set-default-coding-systems 'utf-8-unix)
+;; サブプロセスとの入出力時の文字コード
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
 
 ;; 句読点を変換
 ;; M-x r-p-o RET で 、。
