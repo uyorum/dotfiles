@@ -23,6 +23,12 @@ ghq-cd() {
 zle -N ghq-cd
 bindkey '^]' ghq-cd
 
+# Git
+alias g='git'
+alias gi='git'
+alias gs='git status'
+alias gc='git checkout'
+
 # Ruby
 alias be='bundle exec'
 
