@@ -1,8 +1,6 @@
 run-emacs-daemon() {
-  if ! which emacsclient >/dev/null; then
-    echo "emacsclient: not found."
-    return 1
-  fi
+  in-path emacsclient || return 1
+
   if [ $UID -eq 0 ]; then
     echo "root does not need Emacs"
     return 0

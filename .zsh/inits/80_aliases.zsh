@@ -2,7 +2,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias vi='vim'
 alias le='less'
-if `which emacsclient >/dev/null`; then
+if in-path -q emacsclient; then
   alias e='emacsclient -nw'
   alias ekill='emacsclient -e "(kill-emacs)"'
 fi
@@ -33,9 +33,9 @@ alias gc='git checkout'
 alias be='bundle exec'
 
 # Python
-if `which python3 >/dev/null`; then
+if in-path -q python3; then
   alias python=python3
 fi
-if `which pip3 >/dev/null`; then
+if in-path -q pip3; then
   alias pip=pip3
 fi
