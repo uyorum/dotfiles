@@ -1,8 +1,3 @@
-# Load common functions
-for f in ~/.zsh/lib/*.(zsh|sh); do
-  source "$f"
-done
-
 # antigen
 export ADOTDIR=~/.zsh/antigen
 source ${ADOTDIR}/antigen/antigen.zsh

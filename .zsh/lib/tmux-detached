@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if tmux has-session >/dev/null 2>&1 && tmux list-sessions; then
+  # detached session exists
+  exit 0
+fi
+exit 1

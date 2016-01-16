@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if ! which tmux >/dev/null; then
+  echo "tmux: not found."
+  exit 1
+fi
+if in-tmux; then
+  echo "You are in tmux."
+  exit 0
+elif tmux-detached; then
+# detached session exists
+echo -n "tmux attach?: (Y/n/session no.) "
+  read
+  if [[ "$REPLY" =~ ^[Yy]$ ]] || [[ "$REPLY" == '' ]]; then
+    tmux attach-session
+    exit
+  elif tmux list-sessions | grep -q "^$REPLY:"; then
+    tmux attach -t "$REPLY"
+    exit
+  fi
+else
+  # tmux is not running
+  tmux new-session
+fi

@@ -1,8 +1,11 @@
 if [ -d "$HOME/bin" ]; then
-  find $HOME/bin -type d | while read line; do
-    export PATH="$line:$PATH"
+  for dir in `find $HOME/bin -type d`; do
+    export PATH="$dir:$PATH"
   done
 fi
+
+# common functions
+export PATH="$HOME/.zsh/lib:$PATH"
 
 export LANG=ja_JP.UTF-8
 export PATH="/sbin:$PATH"
