@@ -4,6 +4,7 @@ autoload -Uz vcs_info
 # 表示フォーマットの指定
 # %b ブランチ情報
 # %a アクション名(mergeなど)
+zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats '[%b]'
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () {
