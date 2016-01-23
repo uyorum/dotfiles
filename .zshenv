@@ -17,14 +17,24 @@ export VISUAL="$EDITOR"
 ## C-wで削除するときに区切り文字と見なさない記号のリスト
 export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>+"
 
-# rbenv
+# Ruby
 if [ -d "$HOME/.rbenv" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+  export RBENV_ROOT="$HOME/.rbenv"
+  export PATH="$RBENV_ROOT/bin:$PATH"
   eval "$(rbenv init - zsh)"
 fi
 
-# golang
-if `which go >/dev/null`; then
+# Python
+# also needs "pyenv-virtualenv"
+if [ -d "$HOME/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
+# Go
+if in-path -q go; then
   export GOPATH="$HOME/.go"
   mkdir -p $GOPATH
   export PATH="$GOPATH/bin:$PATH"

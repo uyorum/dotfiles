@@ -31,11 +31,3 @@ alias gc='git checkout'
 
 # Ruby
 alias be='bundle exec'
-
-# Python
-if in-path -q python3; then
-  alias python=python3
-fi
-if in-path -q pip3; then
-  alias pip=pip3
-fi
