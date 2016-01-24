@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((helm-gtags :checksum "68acd9a1b7e1197fd09971c54c0afc066155579e")
+      '((yasnippet :checksum "80941c077f8248ee1e8dcc64b3b57e741b9e5755")
+        (helm-gtags :checksum "68acd9a1b7e1197fd09971c54c0afc066155579e")
         (gtags :checksum "6b418af3eb47d396329ea0d10cd632653e8e4204")
         (emacs-emojify :checksum "cf4f7a4a141691cb269b78d8873513d28b039580")
         (tabbar-ruler :checksum "5854ef040a1c45e1ce7dfebea6ed7953ce6bd2b9")

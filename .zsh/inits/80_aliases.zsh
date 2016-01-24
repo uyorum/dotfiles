@@ -18,7 +18,8 @@ alias gcommit='git commit -m "`date +"%Y/%m/%d-%H:%M"`_`whoami`@$(hostname -s)"'
 
 # ghq
 ghq-cd() {
-  cd `ghq list -p | peco` >/dev/null
+  echo
+  cd `ghq list -p | peco`
 }
 zle -N ghq-cd
 bindkey '^]' ghq-cd
@@ -27,15 +28,8 @@ bindkey '^]' ghq-cd
 alias g='git'
 alias gi='git'
 alias gs='git status'
-alias gc='git checkout'
+alias gc='git commit'
+alias gco='git checkout'
 
 # Ruby
 alias be='bundle exec'
-
-# Python
-if in-path -q python3; then
-  alias python=python3
-fi
-if in-path -q pip3; then
-  alias pip=pip3
-fi
