@@ -5,6 +5,7 @@ mklink /D %HOME%\.vim %HOME%\dotfiles\.vim
 mklink /D %HOME%\.zsh %HOME%\dotfiles\.zsh
 mklink %HOME%\.gemrc %HOME%\dotfiles\.gemrc
 mklink %HOME%\.gitconfig %HOME%\dotfiles\.gitconfig
+mklink %HOME%\.globalrc %HOME%\dotfiles\.globalrc
 mklink %HOME%\.tmux.conf %HOME%\dotfiles\.tmux.conf
 mklink %HOME%\.vimperatorrc %HOME%\dotfiles\.vimperatorrc
 mklink %HOME%\.vimrc %HOME%\dotfiles\.vimrc
