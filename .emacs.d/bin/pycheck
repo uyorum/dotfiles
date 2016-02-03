@@ -1,0 +1,14 @@
+#!/bin/bash
+
+main() {
+  # Ignore some errors
+  #IGNORE_ERRORS=E221,E701,E202
+
+  which pyflakes >/dev/null 2>&1 || exit 254
+  which pep8 >/dev/null 2>&1 || exit 254
+  pyflakes $*
+  pep8 --ignore=$IGNORE_ERRORS --repeat $*
+  exit 0
+}
+
+main $*
