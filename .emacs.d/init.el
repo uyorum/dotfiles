@@ -13,6 +13,8 @@
 
 ;; el-getでインストールするelispのバージョンを固定する
 (el-get-bundle! tarao/el-get-lock)
+;; Windowsでel-get.lockの改行コードがCRLFになるのを防ぐ
+(set-default-coding-systems 'utf-8-unix)
 (el-get-lock)
 (el-get-lock-unlock 'color-theme)
 (el-get-lock-unlock 'key-chord)
