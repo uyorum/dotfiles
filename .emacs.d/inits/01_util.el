@@ -77,18 +77,6 @@
 (setq save-place-file (concat my:dir-dot-emacs-local "/saved-places"))
 (require 'saveplace)
 
-;; auto-insert
-(auto-insert-mode)
-;; 最後の / は必須
-(setq auto-insert-directory (concat user-emacs-directory "insert/"))
-;; 各ファイルによってテンプレートを切り替える
-(setq auto-insert-alist
-      (append '(
-                ('org-mode . "org-template.org")
-                ('c-mode . "c-template.c")
-                ("\\.tex" . "tex-template.tex")
-                ) auto-insert-alist))
-
 ;; シンボリックリンクを辿る
 (setq vc-follow-symlinks t)
 
