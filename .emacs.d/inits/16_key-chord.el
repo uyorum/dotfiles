@@ -8,4 +8,4 @@
 ;; jk: toggle view-mode
 (key-chord-define-global "jk" 'view-mode)
 ;; kc: toggle key combo
-(key-chord-define-global "kc" 'key-combo-mode)
+(key-chord-define-global "kc" 'key-chord-mode)
