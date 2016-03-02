@@ -49,8 +49,8 @@ clone_dotfiles() {
 
 make_link() {
   local dotfiles_dir="$1"
-  for f in $(ls -Ad1 ${dotfiles_dir}/.* | grep -v -e '.git' -e '.windows'); do
-    ln -s ${f} ${HOME}
+  for f in $(ls -A1 ${dotfiles_dir} | egrep -v -e '^\.git$' -e '^\.gitignore$' -e '^\.gitmodules$' -e '^\.windows$' -e '^[^.]'); do
+    ln -s ${dotfiles_dir}/${f} ${HOME}
   done
 }
 
