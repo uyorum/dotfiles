@@ -13,7 +13,7 @@
 # Xmonad
 .xmonad/*
 !.xmonad/xmonad.hs
-!.xmonad/xmobarrc.hs
+!.xmonad/xmobarrc
 
 # Zsh
 .zsh/antigen/*
