@@ -1,4 +1,4 @@
-(el-get-bundle! Enhanced-Ruby-Mode)
+(el-get-bundle! enh-ruby-mode in Enhanced-Ruby-Mode)
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("Capfile$" . enh-ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
