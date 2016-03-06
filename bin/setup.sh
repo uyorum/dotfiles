@@ -69,6 +69,13 @@ cp ${vimp_dir}/vimperator-plugins/plugin_loader.js ${vimp_dir}/plugin
 EOF
 }
 
+setup_tmux_plugin() {
+  local tmux_dir="$1"
+
+  mkdir -p "${tmux_dir}/plugins"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
 main() {
   for OPT in "$@"; do
     case "$OPT" in
@@ -113,6 +120,7 @@ main() {
 
   readonly DEST="$HOME"
   VIMP_DIR="$HOME/.vimperator"
+  readonly TMUX_DIR="$HOME/.tmux"
   clone_dotfiles "$DEST"
 
   # For Windows
@@ -128,6 +136,8 @@ main() {
 
   readonly VIMP_DIR
   setup_vimp_plugin "$VIMP_DIR"
+
+  setup_tmux_plugin "$TMUX_DIR"
 }
 
 main "$@"
