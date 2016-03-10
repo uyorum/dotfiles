@@ -4,6 +4,8 @@
 
        (add-to-list 'zeal-at-point-mode-alist '(python-mode . "python"))
        (add-to-list 'zeal-at-point-mode-alist '(ruby-mode . "ruby"))
+       (add-to-list 'zeal-at-point-mode-alist '(enh-ruby-mode . "ruby"))
        (add-to-list 'zeal-at-point-mode-alist '(go-mode . "go"))
        (add-to-list 'zeal-at-point-mode-alist '(shell-script-mode . "bash"))
+       (add-to-list 'zeal-at-point-mode-alist '(emacs-lisp-mode . "elisp"))
        ))
