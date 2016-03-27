@@ -17,6 +17,11 @@ export VISUAL="$EDITOR"
 ## C-wで削除するときに区切り文字と見なさない記号のリスト
 export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>+"
 
+# Coreutils for OSX
+if in-path -q brew && [ -d $(brew --prefix coreutils) ]; then
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
+
 # Ruby
 if [ -d "$HOME/.rbenv" ]; then
   export RBENV_ROOT="$HOME/.rbenv"

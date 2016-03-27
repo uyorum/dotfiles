@@ -10,4 +10,5 @@ run-emacs-daemon() {
     emacs --daemon
   fi
 }
-run-emacs-daemon
+
+[ -n $DISPLAY ] || run-emacs-daemon
