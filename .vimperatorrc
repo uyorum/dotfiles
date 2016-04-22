@@ -57,15 +57,16 @@ hi ErrorMsg color:white; background-color: #ec6aa1;
 "
 " qmarks
 "
-qmark a http://www.amazon.co.jp/
+qmark a https://www.amazon.co.jp/
 qmark c https://calendar.google.com/
-qmark e https://www.evernote.com/Home.action
-qmark g https://github.com/
+qmark e https://www.evernote.com/intl/jp
+qmark g https://github.com/uyorum
 qmark i https://inbox.google.com/
 qmark j https://www.jaccs.co.jp/icmclub/icm_login.html
 qmark k https://kindle.amazon.co.jp/
 qmark p https://getpocket.com/
-qmark t http://www.toodledo.com/
+qmark t https://www.toodledo.com/
+qmark T https://trello.com/
 qmark u https://entry11.bk.mufg.jp/ibg/dfw/APLIN/loginib/login?_TRANID=AA000_001
 " メモ帳
 qmark q data:text/html,%20<html%20contenteditable>
