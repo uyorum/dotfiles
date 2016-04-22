@@ -20,7 +20,8 @@
 !.zsh/antigen/antigen
 
 # Chef
-.berkshelf/cookbooks
+.berkshelf/*
+!.berkshelf/config.json
 .kitchen/logs
 
 .fonts

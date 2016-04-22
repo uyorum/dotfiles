@@ -1,7 +1,8 @@
 (el-get-bundle! go-mode)
 (el-get-bundle! go-flymake)
 
-;; need to install gocode
+;; need some go libraries
+;; `go get -u github.com/dougm/goflymake`
 ;; `go get -u github.com/nsf/gocode`
 (el-get-bundle! go-autocomplete)
 
