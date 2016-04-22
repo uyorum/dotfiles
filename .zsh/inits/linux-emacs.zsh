@@ -11,4 +11,6 @@ run-emacs-daemon() {
   fi
 }
 
-[ -n $DISPLAY ] || run-emacs-daemon
+# headless environment
+[ -n $DISPLAY ] && run-emacs-daemon
+[ -n $DISPLAY ] && alias e='emacsclient -nw'
