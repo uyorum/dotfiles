@@ -59,6 +59,7 @@ hi ErrorMsg color:white; background-color: #ec6aa1;
 "
 qmark a https://www.amazon.co.jp/
 qmark c https://calendar.google.com/
+qmark d https://hub.docker.com/
 qmark e https://www.evernote.com/intl/jp
 qmark g https://github.com/uyorum
 qmark i https://inbox.google.com/
@@ -97,8 +98,3 @@ let clock_format='[%d %t]'
 " about:config
 "
 set! xpinstall.signatures.required false
-
-" 読み込み完了メッセージ
-echo "loaded vimperatorrc."
-
-" [EOF]
