@@ -1,0 +1,23 @@
+#!/bin/bash
+
+case "$1" in
+  'ima')
+    shift
+    docker images $@
+    ;;
+  'ins')
+    shift
+    docker inspect $@
+    ;;
+  'res')
+    shift
+    docker restart $@
+    ;;
+  'sta')
+    shift
+    docker start $@
+    ;;
+  *)
+    docker $@
+    ;;
+esac
