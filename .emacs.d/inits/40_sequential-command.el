@@ -1,8 +1,7 @@
 (el-get-bundle! sequential-command)
-(el-get-bundle! sequential-command-config)
+(el-get-bundle! emacswiki:sequential-command-config)
 
 (sequential-command-setup-keys)
-
 
 (defun beginning-of-visual-indented-line (current-point)
   "インデント文字を飛ばした行頭に戻る。ただし、ポイントから行頭までの間にインデント文字しかない場合は、行頭に戻る。"
