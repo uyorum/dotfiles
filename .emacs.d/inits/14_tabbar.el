@@ -1,4 +1,10 @@
 (el-get-bundle! tabbar)
+
+;; Required by tabbar-ruler
+(el-get-bundle! powerline)
+(powerline-default-theme)
+(el-get-bundle! mode-icons)
+
 (el-get-bundle! tabbar-ruler)
 
 ;; これがないとcui版でエラーになってしまう

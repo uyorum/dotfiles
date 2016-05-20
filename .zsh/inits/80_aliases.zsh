@@ -34,6 +34,10 @@ ghq-cd() {
 zle -N ghq-cd
 bindkey '^]' ghq-cd
 
+# Docker
+alias dc='docker-compose'
+alias dm='docker-machine'
+
 # Git
 alias g='git'
 alias gi='git'
