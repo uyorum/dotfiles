@@ -11,7 +11,7 @@
 ;; メニューを2時間キャッシュ
 (setq howm-menu-expiry-hours 2)
 ;; markdown-modeと連携
-(add-hook 'markdown-mode-hook 'howm-mode)
+(add-hook 'howm-mode 'gfm-mode)
 (setq howm-view-title-header "#")
 (setq howm-file-name-format "%Y/%m/%Y-%m-%d-%H%M%S.md")
 (require 'howm)

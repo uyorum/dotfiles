@@ -42,3 +42,6 @@ setopt auto_pushd
 
 # compacked complete list display
 setopt list_packed
+
+# Direnv
+eval "$(direnv hook zsh)"
