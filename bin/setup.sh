@@ -54,21 +54,6 @@ make_link() {
   done
 }
 
-setup_vimp_plugin() {
-  local vimp_dir="$1"
-  # use vimperator-plugins reposity
-  mkdir -p ${vimp_dir}/plugin
-  cd ${vimp_dir}
-  git clone https://github.com/vimpr/vimperator-plugins
-  # In Windows, symbolic link does not work
-  cp vimperator-plugins/plugin_loader.js plugin/
-  cat <<EOF > vimperator-plugins/.git/hooks/post-merge
-#!/bin/bash
-
-cp ${vimp_dir}/vimperator-plugins/plugin_loader.js ${vimp_dir}/plugin
-EOF
-}
-
 setup_tmux_plugin() {
   local tmux_dir="$1"
 
@@ -128,23 +113,19 @@ main() {
   done
 
   readonly DEST="$HOME"
-  VIMP_DIR="$HOME/.vimperator"
   readonly TMUX_DIR="$HOME/.tmux"
+
   clone_dotfiles "$DEST"
 
   # For Windows
   if [[ `uname` =~ CYGWIN ]]; then
     # make symbolic links with Windows function instead of CYGWIN's "ln"
     export CYGWIN="winsymlinks $CYGWIN"
-    VIMP_DIR="$HOME/vimperator"
     # sym-link of which location is not HOME
     ln -s $DEST/dotfiles/.windows/AutoHotkey.ahk $(cygpath -u $USERPROFILE)/Documents/
   fi
 
   make_link "$DEST/dotfiles"
-
-  readonly VIMP_DIR
-  setup_vimp_plugin "$VIMP_DIR"
 
   setup_tmux_plugin "$TMUX_DIR"
 
