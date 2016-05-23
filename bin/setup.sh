@@ -59,8 +59,9 @@ exec_post_scripts() {
   local post_dir="${dotfiles_dir}/bin/post"
 
   for f in $(ls -1 ${post_dir}); do
-    ${post_dir}/${f}
+    ${post_dir}/${f} &
   done
+  wait
 }
 
 main() {
