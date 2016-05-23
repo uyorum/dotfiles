@@ -4,7 +4,8 @@ packages="github.com/dougm/goflymake
 github.com/nsf/gocode
 github.com/peco/peco/cmd/peco
 github.com/motemen/ghq
-github.com/spf13/hugo"
+github.com/spf13/hugo
+github.com/direnv/direnv"
 
 which go >/dev/null || exit 0
 

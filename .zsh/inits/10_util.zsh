@@ -44,4 +44,4 @@ setopt auto_pushd
 setopt list_packed
 
 # Direnv
-eval "$(direnv hook zsh)"
+in-path -q direnv && eval "$(direnv hook zsh)"
