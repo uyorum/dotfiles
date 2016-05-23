@@ -54,13 +54,6 @@ make_link() {
   done
 }
 
-setup_tmux_plugin() {
-  local tmux_dir="$1"
-
-  mkdir -p "${tmux_dir}/plugins"
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-}
-
 exec_post_scripts() {
   local dotfiles_dir="$1"
   local post_dir="${dotfiles_dir}/bin/post"
@@ -113,7 +106,6 @@ main() {
   done
 
   readonly DEST="$HOME"
-  readonly TMUX_DIR="$HOME/.tmux"
 
   clone_dotfiles "$DEST"
 
@@ -126,8 +118,6 @@ main() {
   fi
 
   make_link "$DEST/dotfiles"
-
-  setup_tmux_plugin "$TMUX_DIR"
 
   exec_post_scripts "$DEST/dotfiles"
 }
