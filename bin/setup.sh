@@ -76,6 +76,15 @@ setup_tmux_plugin() {
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
+exec_post_scripts() {
+  local dotfiles_dir="$1"
+  local post_dir="${dotfiles_dir}/bin/post"
+
+  for f in $(ls -1 ${post_dir}); do
+    ${post_dir}/${f}
+  done
+}
+
 main() {
   for OPT in "$@"; do
     case "$OPT" in
@@ -138,6 +147,8 @@ main() {
   setup_vimp_plugin "$VIMP_DIR"
 
   setup_tmux_plugin "$TMUX_DIR"
+
+  exec_post_scripts "$DEST/dotfiles"
 }
 
 main "$@"
