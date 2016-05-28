@@ -1,3 +1,5 @@
+[include]
+  path = .gitconfig.local
 [user]
   email = uyorum.pub@gmail.com
   name = uyorum
@@ -12,6 +14,7 @@
   co = checkout
 [ghq]
   root = ~/src
+  root = ~/.go/src
 [url "git@github.com:uyorum"]
 	pushInsteadOf = https://github.com/uyorum
 [push]
