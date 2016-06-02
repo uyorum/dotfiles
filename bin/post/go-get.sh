@@ -5,7 +5,8 @@ github.com/nsf/gocode
 github.com/peco/peco/cmd/peco
 github.com/motemen/ghq
 github.com/spf13/hugo
-github.com/direnv/direnv"
+github.com/direnv/direnv
+golang.org/x/tools/cmd/goimports"
 
 which go >/dev/null || exit 0
 

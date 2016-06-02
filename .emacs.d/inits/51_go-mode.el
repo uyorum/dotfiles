@@ -4,6 +4,8 @@
 ;; need some go libraries
 ;; `go get -u github.com/dougm/goflymake`
 ;; `go get -u github.com/nsf/gocode`
+;; `go get -u golang.org/x/tools/cmd/goimports`
+
 (el-get-bundle! go-autocomplete)
 
 (add-hook 'go-mode-hook
@@ -17,5 +19,6 @@
 
 ;; run gofmt before save
 (add-hook 'before-save-hook 'gofmt-before-save)
+;; run goimports instead of gofmt
 ;; auto import packages
 (setq gofmt-command "goimports")
