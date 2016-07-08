@@ -13,5 +13,6 @@ which go >/dev/null || exit 0
 
 for package in $(echo $packages | tr '\n' ' '); do
   echo "Installing $package..."
-  go get -u $package
+  go get -u $package &
 done
+wait
