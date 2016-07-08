@@ -1,12 +1,5 @@
 (el-get-bundle! tabbar)
 
-;; Required by tabbar-ruler
-(el-get-bundle! powerline)
-(powerline-default-theme)
-(el-get-bundle! mode-icons)
-
-(el-get-bundle! tabbar-ruler)
-
 ;; これがないとcui版でエラーになってしまう
 (setq mouse-wheel-mode nil)
 (tabbar-mode 1)
@@ -31,7 +24,3 @@
      (find (aref (buffer-name buffer) 0) " *"))
    (buffer-list)))
 (setq tabbar-buffer-list-function 'my-tabbar-buffer-list)
-
-;; タブをprojectileでグループ分け
-(tabbar-ruler-group-buffer-groups)
-(tabbar-ruler-group-by-projectile-project)
