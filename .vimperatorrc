@@ -58,14 +58,18 @@ hi ErrorMsg color:white; background-color: #ec6aa1;
 " qmarks
 "
 qmark a https://www.amazon.co.jp/
+qmark b http://bookmeter.com/
 qmark c https://calendar.google.com/
+qmark C https://travis-ci.org/
 qmark d https://hub.docker.com/
 qmark e https://www.evernote.com/intl/jp
 qmark g https://github.com/uyorum
 qmark i https://inbox.google.com/
+qmark I https://ifttt.com/
 qmark j https://www.jaccs.co.jp/icmclub/icm_login.html
 qmark k https://kindle.amazon.co.jp/
 qmark p https://getpocket.com/
+qmark s https://slack.com/
 qmark t https://www.toodledo.com/
 qmark T https://trello.com/
 qmark u https://entry11.bk.mufg.jp/ibg/dfw/APLIN/loginib/login?_TRANID=AA000_001
