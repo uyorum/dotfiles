@@ -1,3 +1,7 @@
+# Don't load /etc/zprofile and /etc/zlogin
+setopt no_global_rcs
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 if [ -d "$HOME/bin" ]; then
   for dir in `find $HOME/bin -type d`; do
     export PATH="$dir:$PATH"
