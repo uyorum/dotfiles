@@ -19,20 +19,25 @@ function chpwd() {
 }
 
 alias grep='grep --color=auto'
-
 alias sudo='sudo -E'
-
 alias nscript='script "$HOME/log/`date +"%Y-%m-%d-%H%M%S"`_`whoami`_$(hostname -s).log"'
-
-alias gcommit='git commit -m "`date +"%Y/%m/%d-%H:%M"`_`whoami`@$(hostname -s)"'
 
 # ghq
 ghq-cd() {
   echo
   cd $(ghq list -p | peco)
+  zle reset-prompt
 }
 zle -N ghq-cd
 bindkey '^]' ghq-cd
+
+ghq-workspace-cd() {
+  echo
+  cd $(find $HOME/workspace/ -maxdepth 1 -type d | peco)
+  zle reset-prompt
+}
+zle -N ghq-workspace-cd
+bindkey '^@' ghq-workspace-cd
 
 # Docker
 alias dc='docker-compose'
