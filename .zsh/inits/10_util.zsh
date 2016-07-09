@@ -45,3 +45,6 @@ setopt list_packed
 
 # Direnv
 in-path -q direnv && eval "$(direnv hook zsh)"
+
+# TravisCI
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
