@@ -21,9 +21,14 @@ export VISUAL="$EDITOR"
 ## C-wで削除するときに区切り文字と見なさない記号のリスト
 export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>+"
 
-# Coreutils for OSX
-if in-path -q brew && [ -d $(brew --prefix coreutils) ]; then
-  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+# coreutils and findutils for OSX
+if in-path -q brew; then
+  for pkg in coreutils findutils; do
+    if [ -d $(brew --prefix ${pkg}) ]; then
+      export PATH="$(brew --prefix ${pkg})/libexec/gnubin:$PATH"
+      export MANPATH="$(brew --prefix ${pkg})/libexec/gnuman:$MANPATH"
+    fi
+  done
 fi
 
 # Ruby
