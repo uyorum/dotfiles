@@ -1,3 +1,10 @@
 #!/bin/bash
 
-grep -v -e '^\s*$' -e '^\s*#' ${1}
+flag=\#
+
+if [ "$1" == '-f' ]; then
+  flag=$2
+  shift 2
+fi
+
+grep -v -e '^\s*$' -e "^\\s*${flag}" $1
