@@ -17,6 +17,16 @@ case "$1" in
     shift
     docker start $@
     ;;
+  'cl')
+    if [ "$2" == '-f' ]; then
+      docker rm -f `docker ps -a -q`
+    else
+      docker rm `docker ps -a -q`
+    fi
+    ;;
+  'cli')
+    docker rmi $(docker images -a | awk '/^<none>/ { print $3 }')
+    ;;
   *)
     docker $@
     ;;
