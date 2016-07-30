@@ -1,17 +1,25 @@
-# antigen
-export ADOTDIR=~/.zsh/antigen
-source ${ADOTDIR}/antigen/antigen.zsh
-antigen bundle unixorn/autoupdate-antigen.zshplugin
+# zplug
+export ZPLUG_HOME=$HOME/.zsh/zplug
+source ${ZPLUG_HOME}/zplug/init.zsh
 
-# init-loader
-export ZSH_INIT_DIR=$HOME/.zsh/inits
-antigen bundle uyorum/zsh-init-loader
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "chrissicool/zsh-256color"
+zplug "rimraf/k"
+zplug "zsh-users/zaw"
 
 # init-loader numbering
 # 00    00_ssh.zsh
 # 01-30 my configurations
-# 31-60 antigen plugins
+# 31-60 plugins
 # 80    80_aliases.zsh
+export ZSH_INIT_DIR=$HOME/.zsh/inits
+zplug "uyorum/zsh-init-loader"
+
+if ! zplug check; then
+  zplug install
+fi
+
+zplug load
 
 # Run tmux
 run-tmux

@@ -1,6 +1,6 @@
-[submodule ".zsh/antigen/antigen"]
-	path = .zsh/antigen/antigen
-	url = https://github.com/zsh-users/antigen.git
 [submodule ".vim/bundle/neobundle.vim"]
 	path = .vim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim
+[submodule ".zsh/zplug/zplug"]
+	path = .zsh/zplug/zplug
+	url = https://github.com/zplug/zplug

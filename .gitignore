@@ -17,8 +17,8 @@
 !.xmonad/xmobarrc
 
 # Zsh
-.zsh/antigen/*
-!.zsh/antigen/antigen
+.zsh/zplug/*
+!.zsh/zplug/zplug
 
 # Chef
 .berkshelf/*
