@@ -4,8 +4,9 @@
 #
 # Completion
 #
-autoload -U compinit
-compinit -u
+# zplug loads automatically
+#autoload -U compinit
+#compinit -u
 #autoload predict-on
 #predict-on
 ## 補完候補を矢印キーなどで選択出来るようにする

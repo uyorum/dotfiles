@@ -3,7 +3,6 @@ export ZPLUG_HOME=$HOME/.zsh/zplug
 source ${ZPLUG_HOME}/zplug/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "chrissicool/zsh-256color"
 zplug "rimraf/k"
 zplug "zsh-users/zaw"
 
