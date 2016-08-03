@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <list>
+    <item>
+      <name>Sticky Shift</name>
+      <appendix>Use Semi-colon to Sticky Shift_L</appendix>
+      <identifier>private.semicolon_to_sticky_shift_l</identifier>
+      <inputmode_only>JAPANESE</inputmode_only>
+      <autogen>--KeyToKey-- KeyCode::SEMICOLON, KeyCode::VK_STICKY_SHIFT_L</autogen>
+    </item>
+  </list>
+</root>

@@ -111,11 +111,19 @@ main() {
   clone_dotfiles "$DEST"
 
   # For Windows
-  if [[ `uname` =~ CYGWIN ]]; then
+  if [[ $(uname) =~ CYGWIN ]]; then
     # make symbolic links with Windows function instead of CYGWIN's "ln"
     export CYGWIN="winsymlinks $CYGWIN"
     # sym-link of which location is not HOME
     ln -s $DEST/dotfiles/.windows/AutoHotkey.ahk $(cygpath -u $USERPROFILE)/Documents/
+  fi
+
+  # For MacOS
+  if [[ $(uname) =~ Darwin ]]; then
+    # Karabinier
+    local karabinier_dir="$HOME/Library/Application Support/Karabiner"
+    test -d "$karabinier_dir" || mkdir -p "$karabinier_dir"
+    ln -s $DEST/dotfiles/.macos/karabinier/private.xml "$karabinier_dir"
   fi
 
   make_link "$DEST/dotfiles"
