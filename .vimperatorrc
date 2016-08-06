@@ -9,7 +9,6 @@ set titlestring="Mozilla Firefox"
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 set hintchars="asdfghjkl;"
 set complete=blh
-set editor=emacsclient
 " 入力欄に自動フォーカスしない
 set focuscontent
 " ビジュアルベルを表示しない
@@ -102,3 +101,19 @@ let clock_format='[%d %t]'
 " about:config
 "
 set! xpinstall.signatures.required false
+
+"
+" OS specification
+"
+js<<EOM
+if (liberator.has("MacUnix")) {
+  // for Mac
+  liberator.execute("set\ editor=/usr/local/bin/emacsclient");
+} else if (liberator.has("Win32")) {
+  // for Windows
+  liberator.execute("set\ editor=emacsclient");
+} else {
+  // other OS (linux)
+  liberator.execute("set\ editor=emacsclient");
+}
+EOM
