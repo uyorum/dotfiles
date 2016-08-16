@@ -1,0 +1,5 @@
+FROM ${1:base image}
+
+MAINTAINER uyorum <uyorum.pub@gmail.com>
+
+$0
