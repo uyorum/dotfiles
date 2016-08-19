@@ -1,4 +1,8 @@
-;; Use ruby-mode
+(require 'ruby-mode)
+
+;; Don't insert magic comment
+(defun ruby-mode-set-encoding () nil)
+
 (el-get-bundle! flymake-ruby)
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
 
