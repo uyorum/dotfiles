@@ -17,6 +17,10 @@ case "$1" in
     shift
     docker start $@
     ;;
+  'ser')
+    shift
+    docker service $@
+    ;;
   'cl')
     if [ "$2" == '-f' ]; then
       docker rm -f `docker ps -a -q`
