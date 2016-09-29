@@ -5,7 +5,7 @@
   (global-set-key "\C-x\C-j" 'skk-mode))
 (global-set-key "\C-x\C-j" 'skk-mode)
 (global-set-key "\C-xj" 'skk-mode)
-(global-set-key "\C-xt" 'skk-tutorial)
+;;(global-set-key "\C-xt" 'skk-tutorial)
 ;; 辞書サーバを使う
 (setq skk-large-jisyo (concat user-emacs-directory "SKK-JISYO.L"))
 (setq skk-server-host "localhost")
@@ -24,7 +24,7 @@
   (unless (get-buffer-process "*goskk*")
     (async-shell-command
      (mapconcat 'identity
-                (list skk-server-prog "-p" (int-to-string skk-server-portnum) skk-large-jisyo) " ")
+                (list skk-server-prog "-v" "-p" (int-to-string skk-server-portnum) skk-large-jisyo) " ")
      (get-buffer-create "*goskk*"))))
 (my:skk-boot-server)
 (defun my:skk-close-server ()
