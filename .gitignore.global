@@ -7,4 +7,4 @@ GTAGS
 .envrc
 
 # Golang
-make.test*
+main.test*
