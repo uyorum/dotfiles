@@ -68,6 +68,7 @@ qmark I https://ifttt.com/
 qmark j https://www.jaccs.co.jp/icmclub/icm_login.html
 qmark k https://kindle.amazon.co.jp/
 qmark p https://getpocket.com/
+qmark P https://photos.google.com/
 qmark s https://slack.com/
 qmark t https://www.toodledo.com/
 qmark T https://trello.com/
@@ -100,7 +101,7 @@ let clock_format='[%d %t]'
 "
 " about:config
 "
-set! xpinstall.signatures.required false
+"set! xpinstall.signatures.required false
 
 "
 " OS specification
