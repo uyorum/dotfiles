@@ -49,7 +49,7 @@ clone_dotfiles() {
 
 make_link() {
   local dotfiles_dir="$1"
-  for f in $(ls -A1 ${dotfiles_dir} | egrep -v -e '^\.git$' -e '^\.gitignore$' -e '^\.gitmodules$' -e '^\.windows$' -e '^[^.]'); do
+  for f in $(ls -A1 ${dotfiles_dir} | egrep -v -e '^\.git$' -e '^\.gitignore$' -e '^\.gitmodules$' -e '^\.linux$' -e '^\.windows$' -e '^\.macos$' -e '^[^.]'); do
     ln -s ${dotfiles_dir}/${f} ${HOME}
   done
 }
@@ -109,6 +109,11 @@ main() {
   readonly DEST="$HOME"
 
   clone_dotfiles "$DEST"
+
+  # For Linux
+  if [[ $(uname) =~ Linux ]]; then
+    make_link "$DEST/dotfiles/.linux"
+  fi
 
   # For Windows
   if [[ $(uname) =~ CYGWIN ]]; then
