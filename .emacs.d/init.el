@@ -1,4 +1,3 @@
-;; el-get
 (when load-file-name
   (setq user-emacs-directory (file-name-directory load-file-name)))
 
@@ -10,6 +9,7 @@
        "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
     (goto-char (point-max))
     (eval-print-last-sexp)))
+(package-initialize)
 
 ;; el-getでインストールするelispのバージョンを固定する
 (el-get-bundle! tarao/el-get-lock)

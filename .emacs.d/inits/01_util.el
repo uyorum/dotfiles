@@ -56,8 +56,10 @@
 (setq-default indent-tabs-mode nil)
 ;; デフォルトのインデント幅
 (setq default-tab-width 2)
-;; jsonのインデント幅を2にする
+;; json
 (setq js-indent-level 2)
+;; CSS
+(setq css-indent-offset 2)
 
 ;; yes/no ではなく y/n で質問に答える
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -121,4 +123,4 @@
 (electric-pair-mode 1)
 
 ;; 行番号を表示する
-;;(global-linum-mode t)
+(global-linum-mode t)
