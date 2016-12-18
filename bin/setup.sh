@@ -129,6 +129,12 @@ main() {
     local karabinier_dir="$HOME/Library/Application Support/Karabiner"
     test -d "$karabinier_dir" || mkdir -p "$karabinier_dir"
     ln -s $DEST/dotfiles/.macos/karabinier/private.xml "$karabinier_dir"
+
+    # gnupg
+    # use pinentry-mac (required for twittering-mode)
+    local gnupg_dir="$HOME/.gnupg"
+    test -d "$gnupg_dir" || mkdir -p "$gnupg_dir"
+    ln -s $DEST/dotfiles/.macos/.gnupg/gpg-agent.conf "$gnupg_dir"
   fi
 
   make_link "$DEST/dotfiles"

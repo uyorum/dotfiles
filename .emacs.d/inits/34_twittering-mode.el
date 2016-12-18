@@ -1,4 +1,5 @@
-(el-get-bundle! twittering-mode)
+;;(el-get-bundle! twittering-mode)
+(el-get-bundle! twittering-mode :type github :pkgname "hayamiz/twittering-mode")
 
 (require 'epa-file)
 (epa-file-enable)
@@ -41,7 +42,7 @@
 (setq twittering-use-icon-storage t)
 ;; アイコンサイズを変更
 ;; imagemagickが必要
-;(setq twittering-convert-fix-size 40)
+;;(setq twittering-convert-fix-size 40)
 ;; 各種ファイルの場所を変更
 (setq twittering-private-info-file (concat my:dir-dot-emacs-local "twittering-mode.gpg"))
 (setq twittering-icon-storage-file (concat my:dir-dot-emacs-local "twittering-mode-icons.gz"))
@@ -57,7 +58,7 @@
 (define-key twittering-mode-map (kbd "R") 'twittering-native-retweet)
 ;; 証明書を検証しない
 ;; 一部の公衆無線LANを使うとき必要
-(setq twittering-allow-insecure-server-cert t)
+;;(setq twittering-allow-insecure-server-cert t)
 ;; つぶやく時，ミニバッファではなくて通常のバッファがポップアップしてほしい場合はこれを加える
 (setq twittering-update-status-function 'twittering-update-status-from-pop-up-buffer)
 
