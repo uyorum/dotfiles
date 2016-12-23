@@ -1,6 +1,6 @@
-;; view-mode
 (setq view-read-only t)
 (require 'view)
+
 ;; vi 感覚の操作
 (define-key view-mode-map (kbd "h") 'backward-char)
 (define-key view-mode-map (kbd "j") 'next-line)
@@ -11,4 +11,4 @@
 (define-key view-mode-map (kbd "$") 'end-of-line)
 ;; 書き込み不能なファイルで view-mode から抜けなくする
 ;; エラーが出るためコメントアウトしておく
-;(viewer-stay-in-setup)
+;;(viewer-stay-in-setup)

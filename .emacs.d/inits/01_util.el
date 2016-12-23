@@ -124,3 +124,5 @@
 
 ;; 行番号を表示する
 (global-linum-mode t)
+;; 3桁分のマージンをとる
+(setq linum-format "%3d")

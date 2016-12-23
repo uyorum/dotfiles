@@ -8,9 +8,9 @@
 (unless (server-running-p)
   (server-start))
 ;; 編集が終了したらEmacsを最小化する
-;(defun iconify-emacs-when-server-is-done ()
-;  (unless server-clients (iconify-frame)))
-;(add-hook 'server-done-hook 'iconify-emacs-when-server-is-done)
+;;(defun iconify-emacs-when-server-is-done ()
+;;  (unless server-clients (iconify-frame)))
+;;(add-hook 'server-done-hook 'iconify-emacs-when-server-is-done)
 ;; C-x C-c にemacsclient終了を割り当てる
 (global-set-key (kbd "C-x C-c") 'server-edit)
 ;; emacsclient -nwで起動した場合はC-x C-zで終了する

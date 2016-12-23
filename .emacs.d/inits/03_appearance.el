@@ -12,9 +12,9 @@
 (setq frame-title-format "%f")
 
 ;; 現在行に色をつける
-;(global-hl-line-mode 1)
+;;(global-hl-line-mode 1)
 ;; 色の変更
-;(set-face-background 'hl-line "darkolivegreen")
+;;(set-face-background 'hl-line "darkolivegreen")
 ;; 現在行をアンダーラインで強調
 (setq hl-line-face 'underline)
 ;; 動作が重くなるのを防ぐ
@@ -25,7 +25,7 @@
     (global-hl-line-highlight)))
 (setq global-hl-line-timer
       (run-with-idle-timer 0.03 t 'global-hl-line-timer-function))
-;; (cancel-timer global-hl-line-timer)
+;;(cancel-timer global-hl-line-timer)
 
 ;; フォントの設定
 (set-face-attribute 'default nil :font "源ノ角ゴシック Code JP R" :height 110)
