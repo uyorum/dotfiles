@@ -23,7 +23,7 @@
 ;; ロックファイルは場所変更の方法がわからないため作成しないようにする
 (setq create-lockfiles nil)
 
-;;; auto save and restore scratch buffer
+;; auto save and restore scratch buffer
 (defvar my:scratch-save-file (concat my:dir-dot-emacs-local "scratch"))
 (defun save-scratch-data ()
   (let ((str (progn
@@ -92,10 +92,10 @@
 ;; 反対側のウィンドウにいけるように
 (setq windmove-wrap-around t)
 ;; C-M-{h,j,k,l}でウィンドウ間を移動
-(define-key global-map (kbd "C-M-k") 'windmove-up)
-(define-key global-map (kbd "C-M-j") 'windmove-down)
-(define-key global-map (kbd "C-M-l") 'windmove-right)
-(define-key global-map (kbd "C-M-h") 'windmove-left)
+(global-set-key (kbd "C-M-k") 'windmove-up)
+(global-set-key (kbd "C-M-j") 'windmove-down)
+(global-set-key (kbd "C-M-l") 'windmove-right)
+(global-set-key (kbd "C-M-h") 'windmove-left)
 
 ;; resizing window
 (global-set-key (kbd "S-C-h") 'shrink-window-horizontally)
@@ -126,3 +126,7 @@
 (global-linum-mode t)
 ;; 3桁分のマージンをとる
 (setq linum-format "%3d")
+
+;; ファイルが #! から始まる場合，+x を付けて保存する
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)

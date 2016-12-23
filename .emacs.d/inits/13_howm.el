@@ -2,7 +2,7 @@
 
 ;; http://howm.sourceforge.jp/index-j.html
 (setq howm-menu-lang 'ja)
-(global-set-key "\C-c,," 'howm-menu)
+(global-set-key (kbd "C-c , ,") 'howm-menu)
 (autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
 ;; 保存場所の変更
 (setq howm-directory (concat HOME "/howm"))
@@ -24,10 +24,4 @@
     (save-buffer)
     (kill-buffer nil)))
 ;; C-c C-c C-cでメモの保存と同時にバッファを閉じる
-(define-key howm-mode-map (kbd "\C-c\C-c\C-c") 'howm-save-buffer-and-kill)
-;; action-lock
-(setq action-lock-default-rules
-      (cons (action-lock-switch
-             '("[ ]"
-               "[+]"
-               "[x]")) action-lock-default-rules))
+(define-key howm-mode-map (kbd "C-c C-c C-c") 'howm-save-buffer-and-kill)

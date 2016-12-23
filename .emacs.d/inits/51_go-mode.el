@@ -19,6 +19,7 @@
 
 ;; run gofmt before save
 (add-hook 'before-save-hook 'gofmt-before-save)
+
 ;; run goimports instead of gofmt
 ;; auto import packages
 (setq gofmt-command "goimports")

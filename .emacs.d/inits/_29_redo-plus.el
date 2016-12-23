@@ -1,5 +1,4 @@
-(el-get-bundle redo+)
-(require 'redo+)
+(el-get-bundle! redo+)
 
 (global-set-key (kbd "C-M-/") 'redo)
 

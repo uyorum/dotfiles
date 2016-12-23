@@ -2,10 +2,9 @@
 
 ;; dired-x をロードした場合，C-xC-jにskk-modeをバインドしなおす
 (when (require 'dired-x nil t)
-  (global-set-key "\C-x\C-j" 'skk-mode))
-(global-set-key "\C-x\C-j" 'skk-mode)
-(global-set-key "\C-xj" 'skk-mode)
-;;(global-set-key "\C-xt" 'skk-tutorial)
+  (global-set-key (kbd "C-x C-j") 'skk-mode))
+(global-set-key (kbd "C-x C-j") 'skk-mode)
+(global-set-key (kbd "C-x j") 'skk-mode)
 ;; 辞書サーバを使う
 (setq skk-large-jisyo (concat user-emacs-directory "SKK-JISYO.L"))
 (setq skk-server-host "localhost")
