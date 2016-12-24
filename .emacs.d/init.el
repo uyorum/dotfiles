@@ -35,3 +35,7 @@
 ;; 11 - 50 installed elisp
 ;; 51 - 70 program languages
 ;; 71 -    etc.
+
+;; カスタム変数を読み込み
+;;(when (file-exists-p custom-file)
+;;  load-file custom-file)

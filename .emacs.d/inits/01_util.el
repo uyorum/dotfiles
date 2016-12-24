@@ -23,6 +23,10 @@
 ;; ロックファイルは場所変更の方法がわからないため作成しないようにする
 (setq create-lockfiles nil)
 
+;; M-x customize-variables や外部パッケージによるカスタム変数
+;; 端末ごとの固有の設定もここに書く
+(setq custom-file (concat my:dir-dot-emacs-local "custom.el"))
+
 ;; auto save and restore scratch buffer
 (defvar my:scratch-save-file (concat my:dir-dot-emacs-local "scratch"))
 (defun save-scratch-data ()
