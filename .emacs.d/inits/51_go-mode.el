@@ -15,7 +15,7 @@
              (local-set-key (kbd "M-.") 'godef-jump)
              (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
              (local-set-key (kbd "C-c i") 'go-goto-imports)
-             (local-set-key (kbd "C-c d") 'godoc)))
+             (local-set-key (kbd "C-c g") 'godoc)))
 
 ;; run gofmt before save
 (add-hook 'before-save-hook 'gofmt-before-save)
