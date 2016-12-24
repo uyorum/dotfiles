@@ -37,5 +37,5 @@
 ;; 71 -    etc.
 
 ;; カスタム変数を読み込み
-;;(when (file-exists-p custom-file)
-;;  load-file custom-file)
+(when (file-exists-p custom-file)
+  (load-file custom-file))
