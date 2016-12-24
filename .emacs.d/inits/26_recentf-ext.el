@@ -17,9 +17,9 @@
         "/.emacs.d/elpa/"
         "/.emacs.d/el-get/"
         "/howm-keys$"
-        "/recentf$"))
+        "/.emacs.local/"))
 ;; 保存する内容を整理しない
-;(setq recentf-auto-cleanup 'never)
+;;(setq recentf-auto-cleanup 'never)
 ;; 30秒ごとに recentf を保存
 (run-with-idle-timer 30 t 'recentf-save-list)
 

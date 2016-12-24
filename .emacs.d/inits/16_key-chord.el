@@ -7,5 +7,5 @@
 (key-chord-define-global "rf" 'recentf-open-files)
 ;; jk: toggle view-mode
 (key-chord-define-global "jk" 'view-mode)
-;; kc: toggle key combo
+;; kc: toggle key chord
 (key-chord-define-global "kc" 'key-chord-mode)
