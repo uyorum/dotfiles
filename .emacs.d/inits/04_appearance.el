@@ -5,6 +5,41 @@
 ;; モードラインに時刻を表示
 (display-time)
 
+;; 起動時のフレームサイズ，位置を記憶
+(defvar my:frame-parameters-file (concat my:dir-dot-emacs-local "frame-parameter"))
+(defun save-frame-size ()
+  (interactive)
+  (let* ((param (frame-parameters (selected-frame)))
+         (current-height (frame-height))
+         (current-width (frame-width))
+         (current-top-margin (if (integerp (cdr (assoc 'top param)))
+                                 (cdr (assoc 'top param))
+                                 0))
+         (current-left-margin (if (integerp (cdr (assoc 'left param)))
+                                  (cdr (assoc 'left param))
+                                  0))
+         (buf nil)
+         (file my:frame-parameters-file)
+         )
+    (unless (setq buf (get-file-buffer (expand-file-name file)))
+      (setq buf (find-file-noselect (expand-file-name file))))
+    (set-buffer buf)
+    (erase-buffer)
+    (insert (concat
+             "(set-frame-size (selected-frame) "(int-to-string current-width)" "(int-to-string current-height)")\n"
+             "(set-frame-position (selected-frame) "(int-to-string current-left-margin)" "(int-to-string current-top-margin)")\n"
+             ))
+    (save-buffer)))
+(when window-system
+  (add-hook 'kill-emacs-hook 'save-frame-size))
+
+(defun load-frame-size ()
+  (interactive)
+  (let ((file my:frame-parameters-file))
+    (when (file-exists-p file)
+      (load-file file))))
+(when window-system (load-frame-size))
+
 ;; カーソルの点滅を止める
 ;; (blink-cursor-mode 0)
 
