@@ -17,6 +17,6 @@
 
 ;; Ruby on Rails
 ;; installation of inflections via el-get fails
-(el-get-bundle! inflections :type github :pkgname "eschulte/jump.el")
-(el-get-bundle! projectile-rails)
-(projectile-rails-global-mode)
+;;(el-get-bundle! inflections :type github :pkgname "eschulte/jump.el")
+;;(el-get-bundle! projectile-rails)
+;;(projectile-rails-global-mode)
