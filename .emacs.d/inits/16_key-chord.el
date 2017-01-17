@@ -1,6 +1,6 @@
 (el-get-bundle! key-chord)
 
-;;同時押しの許容誤差
+;; 同時押しの許容誤差
 (setq key-chord-two-keys-delay 0.04)
 (key-chord-mode 1)
 ;; rf: recentf-open-files

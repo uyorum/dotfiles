@@ -63,4 +63,6 @@
 (setq twittering-update-status-function 'twittering-update-status-from-pop-up-buffer)
 
 (add-hook 'twittering-edit-mode-hook 'skk-mode)
-;;(add-hook 'twittering-mode-hook '(linum-mode 0))
+(add-hook 'twittering-mode-hook
+          (lambda ()
+            (linum-mode 0)))

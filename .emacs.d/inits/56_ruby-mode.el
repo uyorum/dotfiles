@@ -5,6 +5,7 @@
 
 (el-get-bundle! ruby-electric)
 (add-hook 'ruby-mode-hook 'ruby-electric-mode)
+(add-hook 'ruby-mode-hook '(electric-pair-local-mode 0))
 
 ;; Flymake
 (el-get-bundle! flymake-ruby)
