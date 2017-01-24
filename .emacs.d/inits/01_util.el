@@ -84,6 +84,13 @@
   (end-of-line nil))
 (global-set-key (kbd "C-o") 'openline-and-indent)
 
+(defun backward-kill-word-or-kill-region ()
+  (interactive)
+  (if (or (not transient-mark-mode) (region-active-p))
+      (kill-region (region-beginning) (region-end))
+    (backward-kill-word 1)))
+(global-set-key (kbd "C-w") 'backward-kill-word-or-kill-region)
+
 ;; ファイル内のカーソル位置を記憶
 (setq-default save-place t)
 (setq save-place-file (concat my:dir-dot-emacs-local "/saved-places"))
