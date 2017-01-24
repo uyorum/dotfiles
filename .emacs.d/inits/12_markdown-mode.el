@@ -14,4 +14,3 @@
 (setq markdown-indent-on-enter nil)
 (add-hook 'markdown-mode-hook 'skk-mode)
 (add-hook 'gfm-mode-hook 'skk-mode)
-(add-hook 'visual-line-mode-hook 'skk-mode)
