@@ -134,3 +134,10 @@
 ;; ファイルが #! から始まる場合，+x を付けて保存する
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
+
+;; カーソル移動によるスクロール時にカーソルを中央に移動しない
+(setq scroll-conservatively 1)
+;; 残り10行でスクロールする
+(setq scroll-margin 10)
+;; scroll-up/scroll-down時にカーソル位置を保持する
+(setq scroll-preserve-screen-position t)
