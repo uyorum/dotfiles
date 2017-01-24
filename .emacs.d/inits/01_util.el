@@ -6,9 +6,6 @@
 (unless (file-directory-p my:dir-dot-emacs-local)
   (make-directory my:dir-dot-emacs-local))
 
-;; auto-complete
-(setq ac-comphist-file (concat my:dir-dot-emacs-local "ac-comphist.dat"))
-
 ;; バックアップとオートセーブファイルを ~/.backups/ へ集める
 ;; http://dan-project.log.so-net.ne.jp/2012-06-04
 (defvar my:auto-save-file-dir (concat HOME "/.backups/"))
@@ -77,6 +74,15 @@
 
 ;; C-m にnewline-and-indentを割り当てる
 (global-set-key (kbd "C-m") 'newline-and-indent)
+
+(defun openline-and-indent ()
+  "Insert a new line and indent"
+  (interactive)
+  (newline-and-indent)
+  (previous-line)
+  (indent-according-to-mode)
+  (end-of-line nil))
+(global-set-key (kbd "C-o") 'openline-and-indent)
 
 ;; ファイル内のカーソル位置を記憶
 (setq-default save-place t)
