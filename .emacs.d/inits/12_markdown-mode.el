@@ -14,3 +14,8 @@
 (setq markdown-indent-on-enter nil)
 (add-hook 'markdown-mode-hook 'skk-mode)
 (add-hook 'gfm-mode-hook 'skk-mode)
+
+(define-key markdown-mode-map (kbd "C-c [")
+  (lambda ()
+    (interactive)
+    (insert-string "[ ] ")))
