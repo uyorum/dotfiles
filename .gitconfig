@@ -11,7 +11,11 @@
   ga = log --all --graph --date=short --format=\"%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)\"
   s = status
   c = commit
+  ca = commit --amend
   co = checkout
+  cob = checkout -b
+  d = diff
+  dc = diff --cached
 [ghq]
   root = ~/src
   root = ~/.go/src
