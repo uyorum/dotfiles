@@ -70,7 +70,9 @@
 (setq x-select-enable-clipboard t)
 
 ;; C-h は後退に割り当てる
-(global-set-key (kbd "C-h") 'delete-backward-char)
+;; (global-set-key (kbd "C-h") 'delete-backward-char)
+;; 上の方法だとi-search中などで反映されない
+(define-key key-translation-map [?\C-h] [?\C-?])
 
 ;; C-m にnewline-and-indentを割り当てる
 (global-set-key (kbd "C-m") 'newline-and-indent)
