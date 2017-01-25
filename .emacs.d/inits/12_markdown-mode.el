@@ -1,7 +1,7 @@
 (el-get-bundle! markdown-mode)
 
 (autoload 'markdown-mode "markdown-mode"
-"Major mode for editing Markdown files" t)
+  "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
@@ -13,7 +13,6 @@
        my:pandoc-css-path))
 (setq markdown-indent-on-enter nil)
 (add-hook 'markdown-mode-hook 'skk-mode)
-(add-hook 'gfm-mode-hook 'skk-mode)
 
 (define-key markdown-mode-map (kbd "C-c [")
   (lambda ()
