@@ -4,8 +4,10 @@
 (defun ruby-mode-set-encoding () nil)
 
 (el-get-bundle! ruby-electric)
-(add-hook 'ruby-mode-hook 'ruby-electric-mode)
-(add-hook 'ruby-mode-hook '(electric-pair-local-mode 0))
+(add-hook 'ruby-mode-hook
+          '(lambda ()
+             (electric-pair-local-mode 0)
+             (ruby-electric-mode t)))
 
 ;; Flymake
 (el-get-bundle! flymake-ruby)
