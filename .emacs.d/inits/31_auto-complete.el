@@ -8,6 +8,10 @@
   (setq ac-sources '(ac-source-words-in-same-mode-buffers ac-source-symbols)))
 (add-hook 'emacs-lisp-mode-hook 'emacs-lisp-ac-setup)
 
+;; 自動で補完を開始しない
+(setq ac-auto-start nil)
+;; 補完を開始するキー
+(ac-set-trigger-key "TAB")
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
