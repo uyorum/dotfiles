@@ -1,4 +1,4 @@
-(el-get-bundle! point-undo)
+(el-get-bundle! emacswiki:point-undo)
 
 ;; 以前のカーソル位置に戻る
 (global-set-key (kbd "<f7>") 'point-undo)
