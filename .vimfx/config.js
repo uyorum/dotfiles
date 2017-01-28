@@ -70,6 +70,7 @@ const QMARKS = {
   "i": "https://inbox.google.com/",
   "I": "https://ifttt.com/",
   "j": "https://www.jaccs.co.jp/icmclub/icm_login.html",
+  "J": "http://www.jaccsmall.com/",
   "k": "https://kindle.amazon.co.jp/",
   "p": "https://getpocket.com/",
   "P": "https://photos.google.com/",
@@ -92,19 +93,30 @@ Object.entries(MAPPINGS).forEach(([command, value]) => {
 
 Object.entries(QMARKS).forEach(([key, url]) => {
   if (key.match(/^[A-Z]$/)) {
-    var cmd_name = 'qmark_large_' + key.toLowerCase()
+    var cmd_name_o = 'qmark_o_large_' + key.toLowerCase()
+    var cmd_name_n = 'qmark_n_large_' + key.toLowerCase()
   } else {
-    var cmd_name = 'qmark_' + key
+    var cmd_name_o = 'qmark_o_' + key
+    var cmd_name_n = 'qmark_n_' + key
   }
-  let key_bind = 'gn' + key
+  let key_bind_o = 'go' + key
+  let key_bind_n = 'gn' + key
   
   vimfx.addCommand({
-    name: cmd_name,
+    name: cmd_name_o,
+    description: 'Open ' + url + ' in current tab'
+  }, ({vim}) => {
+    vim.window.gBrowser.loadURI(url)
+  })
+  vimfx.set('custom.mode.normal.' + cmd_name_o, key_bind_o)
+
+  vimfx.addCommand({
+    name: cmd_name_n,
     description: 'Open ' + url + ' in new tab'
   }, ({vim}) => {
     vim.window.gBrowser.loadOneTab(url)
   })
-  vimfx.set('custom.mode.normal.' + cmd_name, key_bind)
+  vimfx.set('custom.mode.normal.' + cmd_name_n, key_bind_n)
 })
 
 // Functions
