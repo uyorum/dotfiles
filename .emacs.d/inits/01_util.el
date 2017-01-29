@@ -136,7 +136,27 @@
            (loop for pattern in my:delete-trailing-whitespace-exclude-suffix
                  thereis (string-match pattern buffer-file-name)))
     (delete-trailing-whitespace))))
-(add-hook 'before-save-hook 'my:delete-trailing-whitespace)
+
+;; hook追加/削除のトグル関数とモードラインで現在の状態表示
+;; http://syohex.hatenablog.com/entry/20130617/1371480584
+(defvar my:current-delete-trail-state "")
+(setq-default mode-line-format
+              (cons '(:eval my:current-delete-trail-state)
+                    mode-line-format))
+(defun my:toggle-delete-trail ()
+  (interactive)
+  (cond ((memq 'my:delete-trailing-whitespace before-save-hook)
+         (setq my:current-delete-trail-state
+               (propertize "[D-]" 'face '((:foreground "blue" :weight bold))))
+         (remove-hook 'before-save-hook 'my:delete-trailing-whitespace))
+        (t
+         (setq my:current-delete-trail-state "")
+         (add-hook 'before-save-hook 'my:delete-trailing-whitespace)))
+  (force-mode-line-update))
+;; (add-hook 'before-save-hook 'my:delete-trailing-whitespace)))
+(my:toggle-delete-trail)
+
+(setq-default show-trailing-whitespace t)
 
 ;; 閉じ括弧を自動で入力
 (electric-pair-mode 1)
