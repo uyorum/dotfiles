@@ -8,12 +8,14 @@ const gClipboardHelper = Components.classes["@mozilla.org/widget/clipboardhelper
       .getService(Components.interfaces.nsIClipboardHelper);
 
 const FIREFOX_PREFS = {
+  'extensions.VimFx.config_file_directory': '~/.vimfx',
   'devtools.chrome.enabled': true,
   'browser.urlbar.filter.javascript': false,
   'findbar.modalHighlight': false,
   'findbar.highlightAll': false,
   'toolkit.scrollbox.horizontalScrollDistance': 5,
   'toolkit.scrollbox.verticalScrollDistance': 5,
+  'browser.tabs.remote.force-enable': true,
 }
 
 const VIMFX_PREFS = {
@@ -31,7 +33,7 @@ const MAPPINGS = {
   "mode.normal.scroll_half_page_up": "",
   "mode.normal.scroll_to_left": "",
   "mode.normal.scroll_to_right": "",
-  
+
   "mode.normal.tab_duplicate": "\\",
   "mode.normal.tab_select_previous": "K  <c-p>",
   "mode.normal.tab_select_next": "J  <c-n>",
@@ -43,19 +45,19 @@ const MAPPINGS = {
   "mode.normal.tab_restore_list": "DX",
   "mode.normal.tab_close_to_end": "Dx$",
   "mode.normal.tab_close_other": "Dxa",
-  
+
   "mode.normal.follow_in_tab": "et",
   "mode.normal.follow_in_focused_tab": "F",
   "mode.normal.follow_multiple": ";F",
   "mode.normal.follow_copy": "",
   "mode.normal.follow_focus": "",
-  
+
   "mode.normal.open_context_menu": "",
-  
+
   "mode.normal.click_browser_element": "",
-  
+
   "mode.normal.element_text_select": "",
-  "mode.normal.element_text_copy": "Y",
+  "mode.normal.element_text_copy": "",
 }
 
 // Quick marks
@@ -101,7 +103,7 @@ Object.entries(QMARKS).forEach(([key, url]) => {
   }
   let key_bind_o = 'go' + key
   let key_bind_n = 'gn' + key
-  
+
   vimfx.addCommand({
     name: cmd_name_o,
     description: 'Open ' + url + ' in current tab'
@@ -128,7 +130,7 @@ vimfx.addCommand({
   let title = vim.window.gBrowser.selectedBrowser.contentTitle
   let fmt = title + " " + url
   gClipboardHelper.copyString(fmt)
-  vim.notify("Copied String: "+ fmt)
+  vim.notify("Copied String: " + fmt)
 })
 vimfx.set('custom.mode.normal.copy_plain', 'cp')
 
@@ -140,6 +142,33 @@ vimfx.addCommand({
   let title = vim.window.gBrowser.selectedBrowser.contentTitle
   let fmt = "[" + title + "](" + url + ")"
   gClipboardHelper.copyString(fmt)
-  vim.notify("Copied String: "+ fmt)
+  vim.notify("Copied String: " + fmt)
 })
 vimfx.set('custom.mode.normal.copy_markdown', 'cm')
+
+vimfx.addCommand({
+  name: 'copy_selection',
+  description: 'Copy the selection or current url',
+  category: 'location'
+}, ({vim}) => {
+  vimfx.send(vim, 'getSelection', true, selection => {
+    if (selection == '') {
+      selection = vim.window.gBrowser.selectedBrowser.currentURI.spec
+    }
+    gClipboardHelper.copyString(selection)
+    vim.notify("Copied String: " + selection)
+  })
+})
+vimfx.set('custom.mode.normal.copy_selection', 'Y')
+
+vimfx.addCommand({
+  name: 'search_selected_text',
+  description: 'Search for the selected text'
+}, ({vim}) => {
+  vimfx.send(vim, 'getSelection', true, selection => {
+    if (selection != '') {
+      vim.window.switchToTabHavingURI(`https://www.google.co.jp/search?q=${selection}`, true)
+    }
+  })
+})
+vimfx.set('custom.mode.normal.search_selected_text', 's')

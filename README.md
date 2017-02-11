@@ -9,6 +9,7 @@
 * Git
 * Ruby(Gem)
 * Vimperator
+* Vimfx
 * Berkshelf
 * Test Kitchen
 * GNU Global
