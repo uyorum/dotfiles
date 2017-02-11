@@ -94,9 +94,12 @@
 (global-set-key (kbd "C-w") 'backward-kill-word-or-kill-region)
 
 ;; ファイル内のカーソル位置を記憶
-(setq-default save-place t)
-(setq save-place-file (concat my:dir-dot-emacs-local "/saved-places"))
 (require 'saveplace)
+(setq save-place-file (concat my:dir-dot-emacs-local "saved-places"))
+;; for Emacs 25+
+(save-place-mode 1)
+;; for Emacs 24
+(setq-default save-place t)
 
 ;; シンボリックリンクを辿る
 (setq vc-follow-symlinks t)
