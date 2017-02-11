@@ -90,3 +90,9 @@
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 ;; * で囲まれたバッファ名は対象外にする
 (setq uniquify-ignore-buffers-re "*[^*]+*")
+
+;; インデントをハイライト
+(el-get-bundle! DarthFennec/highlight-indent-guides)
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+(setq highlight-indent-guides-method 'character)
+(setq highlight-indent-guides-character ?\|)
