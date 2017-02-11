@@ -172,3 +172,27 @@ vimfx.addCommand({
   })
 })
 vimfx.set('custom.mode.normal.search_selected_text', 's')
+
+vimfx.addCommand({
+  name: 'zoom_in',
+  description: 'enlarge text',
+}, ({vim}) => {
+  vim.window.FullZoom.enlarge();
+})
+vimfx.set('custom.mode.normal.zoom_in', '+')
+
+vimfx.addCommand({
+  name: 'zoom_out',
+  description: 'reduce text',
+}, ({vim}) => {
+  vim.window.FullZoom.reduce();
+})
+vimfx.set('custom.mode.normal.zoom_out', '-')
+
+vimfx.addCommand({
+  name: 'reset_zoom',
+  description: 'reset zoom',
+}, ({vim}) => {
+  vim.window.FullZoom.reset();
+})
+vimfx.set('custom.mode.normal.reset_zoom', '0')
