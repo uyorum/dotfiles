@@ -6,9 +6,11 @@
 (global-set-key (kbd "C-x C-j") 'skk-mode)
 (global-set-key (kbd "C-x j") 'skk-mode)
 ;; 辞書サーバを使う
-(setq skk-large-jisyo (concat user-emacs-directory "SKK-JISYO.L"))
 (setq skk-server-host "localhost")
 (setq skk-server-portnum 1178)
+
+;; SKK辞書サーバの起動
+(setq skk-large-jisyo (concat user-emacs-directory "SKK-JISYO.L"))
 (cond ((eq system-type 'windows-nt)
        (setq skk-server-prog (concat BIN "/skkserv-google.exe"))
        (setq skk-large-jisyo (replace-regexp-in-string "/" "\\\\" skk-large-jisyo)))
@@ -16,7 +18,6 @@
        (setq skk-server-prog (concat BIN "/skkserv-google-linux")))
       ((eq system-type 'darwin)
        (setq skk-server-prog (concat BIN "/skkserv-google-osx"))))
-;; SKK辞書サーバの起動
 ;; 非同期で実行するため関数を自作
 (defun my:skk-boot-server ()
   "Start SKK server."
@@ -25,18 +26,19 @@
      (mapconcat 'identity
                 (list skk-server-prog "-v" "-p" (int-to-string skk-server-portnum) skk-large-jisyo) " ")
      (get-buffer-create "*goskk*"))))
-(my:skk-boot-server)
 (defun my:skk-close-server ()
   (interactive)
   (when (get-buffer-process "*goskk*")
     (skk-disconnect-server)
     (kill-process (get-buffer-process "*goskk*"))
     (message "Server disconnected")))
-;; Emacs終了時
-(remove-hook 'kill-emacs-hook 'skk-disconnect-server)
-(add-hook 'kill-emacs-hook 'my:skk-close-server)
-;; Emacs起動時に起動するSKKサーバを使う
-(setq skk-server-inhibit-startup-server nil)
+(defun my:launch-skk-server ()
+  "Start SKK server and configure for using it"
+  (my:skk-boot-server)
+  (remove-hook 'kill-emacs-hook 'skk-disconnect-server)
+  (add-hook 'kill-emacs-hook 'my:skk-close-server)
+  (setq skk-server-inhibit-startup-server nil))
+
 ;; Sticky Shift
 (setq skk-sticky-key ";")
 ;; 動的自動補完機能
