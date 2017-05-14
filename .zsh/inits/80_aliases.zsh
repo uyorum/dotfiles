@@ -43,12 +43,5 @@ bindkey '^@' ghq-workspace-cd
 alias dc='docker-compose'
 alias dm='docker-machine'
 
-# Git
-alias g='git'
-alias gi='git'
-alias gs='git status'
-alias gc='git commit'
-alias gco='git checkout'
-
 # Ruby
 alias be='bundle exec'

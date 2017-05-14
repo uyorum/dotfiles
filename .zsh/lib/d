@@ -23,9 +23,9 @@ case "$1" in
     ;;
   'cl')
     if [ "$2" == '-f' ]; then
-      docker rm -f `docker ps -a -q`
+      docker rm -f $(docker ps -a -q)
     else
-      docker rm `docker ps -a -q`
+      docker rm $(docker ps -a -q)
     fi
     ;;
   'cli')
