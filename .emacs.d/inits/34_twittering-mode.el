@@ -61,6 +61,9 @@
 ;;(setq twittering-allow-insecure-server-cert t)
 ;; つぶやく時，ミニバッファではなくて通常のバッファがポップアップしてほしい場合はこれを加える
 (setq twittering-update-status-function 'twittering-update-status-from-pop-up-buffer)
+;; 返信先に含まれるハッシュタグを末尾に追加する
+;; 現在のtimelineがハッシュタグを含むようなsearch timelineである場合に、そのハッシュタグを自動で追加する
+(setq twittering-edit-skeleton 'inherit-hashtags)
 
 (add-hook 'twittering-edit-mode-hook 'skk-mode)
 (add-hook 'twittering-mode-hook
