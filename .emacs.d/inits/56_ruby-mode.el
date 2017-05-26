@@ -46,8 +46,8 @@
   (my:projectile-find-file-in-dir my:projectile-find-prefix-test))
 
 (global-set-key (kbd "C-c r v") 'my:projectile-find-views)
-(global-set-key (kbd "C-c r m") 'my:projectile-find-controllers)
-(global-set-key (kbd "C-c r c") 'my:projectile-find-models)
+(global-set-key (kbd "C-c r c") 'my:projectile-find-controllers)
+(global-set-key (kbd "C-c r m") 'my:projectile-find-models)
 (global-set-key (kbd "C-c r h") 'my:projectile-find-helpers)
 (global-set-key (kbd "C-c r s") 'my:projectile-find-spec)
 (global-set-key (kbd "C-c r t") 'my:projectile-find-test)
