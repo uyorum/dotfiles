@@ -1,6 +1,6 @@
 # zplug
-export ZPLUG_HOME=$HOME/.zsh/zplug
-source ${ZPLUG_HOME}/zplug/init.zsh
+export ZPLUG_HOME=$HOME/.zplug
+source ${ZPLUG_HOME}/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "rimraf/k"
@@ -20,5 +20,4 @@ fi
 
 zplug load
 
-# Run tmux
 run-tmux

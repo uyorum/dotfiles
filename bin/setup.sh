@@ -47,13 +47,15 @@ clone_dotfiles() {
   git submodule update
 }
 
-make_link() {
+# Make symbolic links from all files in $1 to $HOME
+make_sym_links() {
   local dotfiles_dir="$1"
   for f in $(ls -A1 ${dotfiles_dir} | egrep -v -e '^\.git$' -e '^\.gitignore$' -e '^\.gitmodules$' -e '^\.linux$' -e '^\.windows$' -e '^\.macos$' -e '^[^.]'); do
     ln -s ${dotfiles_dir}/${f} ${HOME}
   done
 }
 
+# Run post setup scripts
 exec_post_scripts() {
   local dotfiles_dir="$1"
   local post_dir="${dotfiles_dir}/bin/post"
@@ -110,35 +112,31 @@ main() {
 
   clone_dotfiles "$DEST"
 
-  # For Linux
-  if [[ $(uname) =~ Linux ]]; then
-    make_link "$DEST/dotfiles/.linux"
-  fi
+  case $(uname) in
+    Linux*)
+      make_sym_links "$DEST/dotfiles/.linux"
+      ;;
+    CYGWIN*)
+      # make symbolic links with Windows function instead of CYGWIN's "ln"
+      export CYGWIN="winsymlinks $CYGWIN"
+      # sym-link of which location is not HOME
+      ln -s $DEST/dotfiles/.windows/AutoHotkey.ahk $(cygpath -u $USERPROFILE)/Documents/
+      ;;
+    Darwin*)
+      # Karabinier
+      local karabinier_dir="$HOME/Library/Application Support/Karabiner"
+      test -d "$karabinier_dir" || mkdir -p "$karabinier_dir"
+      ln -s $DEST/dotfiles/.macos/karabinier/private.xml "$karabinier_dir"
 
-  # For Windows
-  if [[ $(uname) =~ CYGWIN ]]; then
-    # make symbolic links with Windows function instead of CYGWIN's "ln"
-    export CYGWIN="winsymlinks $CYGWIN"
-    # sym-link of which location is not HOME
-    ln -s $DEST/dotfiles/.windows/AutoHotkey.ahk $(cygpath -u $USERPROFILE)/Documents/
-  fi
+      # gnupg
+      # use pinentry-mac (required for twittering-mode)
+      local gnupg_dir="$HOME/.gnupg"
+      test -d "$gnupg_dir" || mkdir -p "$gnupg_dir"
+      ln -s $DEST/dotfiles/.macos/.gnupg/gpg-agent.conf "$gnupg_dir"
+      ;;
+  esac
 
-  # For MacOS
-  if [[ $(uname) =~ Darwin ]]; then
-    # Karabinier
-    local karabinier_dir="$HOME/Library/Application Support/Karabiner"
-    test -d "$karabinier_dir" || mkdir -p "$karabinier_dir"
-    ln -s $DEST/dotfiles/.macos/karabinier/private.xml "$karabinier_dir"
-
-    # gnupg
-    # use pinentry-mac (required for twittering-mode)
-    local gnupg_dir="$HOME/.gnupg"
-    test -d "$gnupg_dir" || mkdir -p "$gnupg_dir"
-    ln -s $DEST/dotfiles/.macos/.gnupg/gpg-agent.conf "$gnupg_dir"
-  fi
-
-  make_link "$DEST/dotfiles"
-
+  make_sym_links "$DEST/dotfiles"
   exec_post_scripts "$DEST/dotfiles"
 }
 
