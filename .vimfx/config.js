@@ -8,14 +8,26 @@ const gClipboardHelper = Components.classes["@mozilla.org/widget/clipboardhelper
       .getService(Components.interfaces.nsIClipboardHelper);
 
 const FIREFOX_PREFS = {
-  'extensions.VimFx.config_file_directory': '~/.vimfx',
-  'devtools.chrome.enabled': true,
-  'browser.urlbar.filter.javascript': false,
-  'findbar.modalHighlight': false,
-  'findbar.highlightAll': false,
-  'toolkit.scrollbox.horizontalScrollDistance': 5,
-  'toolkit.scrollbox.verticalScrollDistance': 5,
-  'browser.tabs.remote.force-enable': true,
+  "extensions.VimFx.config_file_directory": "~/.vimfx",
+  "devtools.chrome.enabled": true,
+  "browser.urlbar.filter.javascript": false,
+  "findbar.modalHighlight": false,
+  "findbar.highlightAll": false,
+  "toolkit.scrollbox.horizontalScrollDistance": 5,
+  "toolkit.scrollbox.verticalScrollDistance": 5,
+
+  // It's All Text!
+  "extensions.itsalltext.extensions": ".md",
+  "extensions.itsalltext.fade_time": "5",
+  "extensions.itsalltext.hotkey": "0:1:0:0:105:0", // Ctrl-I
+  "extensions.itsalltext.refresh": 3,
+
+  // BYM
+  "bym.fxvlink": "#551A8B",
+  "bym.bkg": "#002B36",
+  "bym.link": "#2AA198",
+  "bym.vlink": "#CB4B16",
+
 }
 
 const VIMFX_PREFS = {
@@ -77,6 +89,7 @@ const QMARKS = {
   "p": "https://getpocket.com/",
   "P": "https://photos.google.com/",
   "s": "https://slack.com/",
+  "S": "https://docs.google.com/spreadsheets/",
   "t": "https://www.toodledo.com/",
   "T": "https://trello.com/",
   "u": "https://entry11.bk.mufg.jp/ibg/dfw/APLIN/loginib/login?_TRANID=AA000_001",
