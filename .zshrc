@@ -5,6 +5,7 @@ source ${ZPLUG_HOME}/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "rimraf/k"
 zplug "zsh-users/zaw"
+zplug "b4b4r07/enhancd"
 
 # init-loader numbering
 # 00    00_ssh.zsh
