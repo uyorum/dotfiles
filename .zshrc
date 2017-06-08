@@ -21,4 +21,6 @@ fi
 
 zplug load
 
+[[ -e ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
+
 run-tmux
