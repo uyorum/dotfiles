@@ -15,8 +15,6 @@
 
 ;; Rspec
 (el-get-bundle! rspec-mode)
-;; load snippets by yasnippet
-(eval-after-load 'rspec-mode '(rspec-install-snippets))
 
 ;; Ruby on Rails
 (defvar my:projectile-find-prefix-views "app/views/")
