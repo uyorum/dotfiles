@@ -2,14 +2,8 @@
 
 packages="github.com/dougm/goflymake
 github.com/nsf/gocode
-github.com/peco/peco/cmd/peco
-github.com/motemen/ghq
-github.com/spf13/hugo
-github.com/direnv/direnv
 golang.org/x/tools/cmd/goimports
-github.com/golang/dep/...
-github.com/golang/lint/golint
-github.com/Songmu/make2help/cmd/make2help"
+github.com/golang/lint/golint"
 
 which go >/dev/null || exit 0
 

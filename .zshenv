@@ -18,6 +18,8 @@ export LESS="-R"
 export EDITOR="emacsclient -nw"
 export VISUAL="$EDITOR"
 
+export FZF_DEFAULT_OPTS="--select-1 --exit-0 --reverse"
+
 ## C-wで削除するときに区切り文字と見なさない記号のリスト
 export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>+"
 
