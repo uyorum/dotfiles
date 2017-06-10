@@ -22,7 +22,12 @@ alias grep='grep --color=auto'
 alias sudo='sudo -E'
 alias nscript='script "$HOME/log/`date +"%Y-%m-%d-%H%M%S"`_`whoami`_$(hostname -s).log"'
 
+alias g='git'
+alias gc='anyframe-widget-checkout-git-branch'
+alias gs='anyframe-widget-insert-git-branch'
+
 # Docker
+alias d='docker'
 alias dc='docker-compose'
 alias dm='docker-machine'
 

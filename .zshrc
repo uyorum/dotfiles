@@ -5,12 +5,15 @@ if [[ ! -d ${ZPLUG_HOME} ]]; then
 fi
 source ${ZPLUG_HOME}/init.zsh
 
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-completions"
 zplug "rimraf/k"
 zplug "zsh-users/zaw"
 zplug "b4b4r07/enhancd", use:init.sh
+zplug "zsh-users/zsh-completions"
+zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/gem", from:oh-my-zsh
+zplug "plugins/pip", from:oh-my-zsh
 zplug "motemen/ghq", as:command, from:gh-r, rename-to:ghq
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 #zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
