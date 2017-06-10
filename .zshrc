@@ -29,12 +29,8 @@ if in-path -q go; then
   # zplug can't install pre-build binary without tar or zip
   zplug "direnv/direnv", as:command, hook-build:"go get -d && go build"
 fi
+zplug "mollifier/anyframe", use:"anyframe.plugin.zsh", on:"junegunn/fzf-bin"
 
-# init-loader numbering
-# 00    00_ssh.zsh
-# 01-30 my configurations
-# 31-60 plugins
-# 80    80_aliases.zsh
 export ZSH_INIT_DIR=$HOME/.zsh/inits
 zplug "uyorum/zsh-init-loader", defer:3
 zplug "${HOME}/.zshrc.local", from:local, defer:3, if:"[[ -e ${HOME}/.zshrc.local ]]"

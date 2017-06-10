@@ -22,23 +22,6 @@ alias grep='grep --color=auto'
 alias sudo='sudo -E'
 alias nscript='script "$HOME/log/`date +"%Y-%m-%d-%H%M%S"`_`whoami`_$(hostname -s).log"'
 
-# ghq
-ghq-cd() {
-  echo
-  cd $(ghq list -p | peco)
-  zle reset-prompt
-}
-zle -N ghq-cd
-bindkey '^]' ghq-cd
-
-ghq-workspace-cd() {
-  echo
-  cd $(find $HOME/workspace/ -maxdepth 1 -type d | peco)
-  zle reset-prompt
-}
-zle -N ghq-workspace-cd
-bindkey '^@' ghq-workspace-cd
-
 # Docker
 alias dc='docker-compose'
 alias dm='docker-machine'

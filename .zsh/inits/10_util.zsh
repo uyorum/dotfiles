@@ -47,5 +47,13 @@ setopt list_packed
 # Direnv
 in-path -q direnv && eval "$(direnv hook zsh)"
 
+# Workspace
+export WORKSPACE=$HOME/workspace
+test -d $WORKSPACE || (mkdir -p $WORKSPACE && echo "Created $WORKSPACE as workspace")
+mkwork() {
+  local workdir=$WORKSPACE/`date +%Y%m%d`_$1
+  mkdir -p $workdir && cd $workdir
+}
+
 # TravisCI
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
