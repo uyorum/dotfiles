@@ -16,10 +16,12 @@
   cob = checkout -b
   d = diff
   dc = diff --cached
+  b = branch
+  ba = branch -a
 [ghq]
   root = ~/src
-  root = ~/.go/src
+  root = ~/go/src
 [url "git@github.com:uyorum"]
-	pushInsteadOf = https://github.com/uyorum
+  pushInsteadOf = https://github.com/uyorum
 [push]
-	default = simple
+  default = simple
