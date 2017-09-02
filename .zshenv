@@ -25,7 +25,7 @@ export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>+"
 
 # coreutils and findutils for OSX
 if in-path -q brew; then
-  for pkg in coreutils findutils; do
+  for pkg in coreutils findutils gnu-sed; do
     if [ -d $(brew --prefix ${pkg}) ]; then
       export PATH="$(brew --prefix ${pkg})/libexec/gnubin:$PATH"
       export MANPATH="$(brew --prefix ${pkg})/libexec/gnuman:$MANPATH"
