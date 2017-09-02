@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Remove all unused or untagged layers
+
+docker rmi $(docker images -a | awk '/^<none>/ { print $3 }')

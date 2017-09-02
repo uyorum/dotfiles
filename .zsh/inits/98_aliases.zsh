@@ -27,7 +27,8 @@ alias gc='anyframe-widget-checkout-git-branch'
 alias gs='anyframe-widget-insert-git-branch'
 
 # Docker
-alias d='docker'
+alias docker='mydocker'
+alias d='mydocker'
 alias dc='docker-compose'
 alias dm='docker-machine'
 

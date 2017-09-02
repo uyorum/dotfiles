@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Remove all stopped containers
+# Args:
+#   -f Also remove all running containers
+
+if [[ "$1" == '-f' ]]; then
+  docker rm -f $(docker ps -a -q)
+else
+  docker rm $(docker ps -a -q) 2>/dev/null
+fi
