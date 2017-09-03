@@ -15,8 +15,7 @@
 (el-get-bundle! tarao/el-get-lock)
 ;; Windowsでel-get.lockの改行コードがCRLFになるのを防ぐ
 (set-default-coding-systems 'utf-8-unix)
-;; 特定のパッケージのバージョンをロック
-;;(el-get-lock 'magit)
+(el-get-lock)
 
 ;; init-loader
 (el-get-bundle! init-loader)

@@ -1,6 +1,5 @@
 # Emacs
 .emacs.d/el-get
-.emacs.d/el-get.lock
 .emacs.d/elpa
 .emacs.d/eshell
 .emacs.d/tramp
