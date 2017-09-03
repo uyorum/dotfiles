@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: jquery.function
+# key: jqf
+# group: jQuery
+# --
+$(function($){
+  $0
+});

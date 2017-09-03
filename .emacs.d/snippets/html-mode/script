@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: script
+# key: scr
+# --
+<script>
+  $0
+</script>
