@@ -3,6 +3,8 @@ GPATH
 GRTAGS
 GTAGS
 
+.rbenv-gemsets
+
 # Direnv
 .envrc
 
