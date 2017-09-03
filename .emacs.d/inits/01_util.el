@@ -159,6 +159,12 @@
 ;; (add-hook 'before-save-hook 'my:delete-trailing-whitespace)))
 (my:toggle-delete-trail)
 
+;; バッファ全体をインデント
+(defun my:indent-buffer ()
+  (interactive)
+  (save-excursion
+    (indent-region (point-min) (point-max) nil)))
+
 (setq-default show-trailing-whitespace t)
 
 ;; 閉じ括弧を自動で入力
