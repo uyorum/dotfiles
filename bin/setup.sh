@@ -123,10 +123,12 @@ main() {
       ln -s $DEST/dotfiles/.windows/AutoHotkey.ahk $(cygpath -u $USERPROFILE)/Documents/
       ;;
     Darwin*)
-      # Karabinier
-      local karabinier_dir="$HOME/Library/Application Support/Karabiner"
+      # Karabinier-elements
+      local karabinier_dir="$HOME/.config/karabiner/assets/complex_modifications"
       test -d "$karabinier_dir" || mkdir -p "$karabinier_dir"
-      ln -s $DEST/dotfiles/.macos/karabinier/private.xml "$karabinier_dir"
+      for file in $DEST/dotfiles/.macos/karabiner-elements/*; do
+        ln -s $file "$karabinier_dir"
+      done
 
       # gnupg
       # use pinentry-mac (required for twittering-mode)

@@ -1,0 +1,37 @@
+{
+  "title": "My Customizations",
+  "rules": [
+    {
+      "description": "EISUU to Control_L",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "japanese_eisuu"
+          },
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "KANA to Shift_R",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "japanese_kana"
+          },
+          "to": [
+            {
+              "key_code": "right_shift"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
