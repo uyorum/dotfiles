@@ -63,7 +63,7 @@
 ;;(cancel-timer global-hl-line-timer)
 
 ;; フォントの設定
-(set-face-attribute 'default nil :font "源ノ角ゴシック Code JP R" :height 110)
+(set-face-attribute 'default nil :family "Source Han Code JP" :height 120)
 
 ;; Color theme
 (set-frame-parameter nil 'background-mode 'dark)
