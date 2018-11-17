@@ -10,7 +10,7 @@
 (setq skk-server-portnum 1178)
 
 ;; SKK辞書サーバの起動
-(setq skk-large-jisyo (concat user-emacs-directory "SKK-JISYO.L"))
+(setq skk-large-jisyo (locate-user-emacs-file "SKK-JISYO.L"))
 (cond ((eq system-type 'windows-nt)
        (setq skk-server-prog (concat BIN "/skkserv-google.exe"))
        (setq skk-large-jisyo (replace-regexp-in-string "/" "\\\\" skk-large-jisyo)))

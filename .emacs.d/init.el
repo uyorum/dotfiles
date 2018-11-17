@@ -2,7 +2,7 @@
   (setq user-emacs-directory (file-name-directory load-file-name)))
 
 (add-to-list 'load-path (locate-user-emacs-file "el-get/el-get"))
-(setq el-get-dir (concat user-emacs-directory "el-get/"))
+(setq el-get-dir (locate-user-emacs-file "el-get/"))
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
@@ -24,7 +24,7 @@
 ;(setq init-loader-byte-compile 1)
 ;; エラー時のみログ出力
 (setq init-loader-show-log-after-init 'error-only)
-(defvar my:init-loader-inits-dir (concat user-emacs-directory "inits"))
+(defvar my:init-loader-inits-dir (locate-user-emacs-file "inits"))
 (unless (file-directory-p my:init-loader-inits-dir)
   (make-directory my:init-loader-inits-dir))
 (init-loader-load my:init-loader-inits-dir)
