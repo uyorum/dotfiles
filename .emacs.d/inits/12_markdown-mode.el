@@ -17,4 +17,4 @@
 (define-key markdown-mode-map (kbd "C-c [")
   (lambda ()
     (interactive)
-    (insert-string "[ ] ")))
+    (insert "[ ] ")))
