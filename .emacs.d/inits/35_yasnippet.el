@@ -1,6 +1,6 @@
 (el-get-bundle! yasnippet)
 
-(setq yas-snippet-dirs (locate-user-emacs-file "snippets"))
+(setq yas-snippet-dirs (list (locate-user-emacs-file "snippets")))
 (yas-global-mode 1)
 
 (define-key yas-minor-mode-map (kbd "C-c s n") 'yas-new-snippet)
