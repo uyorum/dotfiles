@@ -20,10 +20,10 @@ zplug "b4b4r07/zsh-gomi", as:command, use:bin/gomi, on:junegunn/fzf-bin
 zplug "Songmu/make2help", as:command, from:gh-r, rename-to:make2help
 case $(uname) in
   Linux*)
-    zplug "spf13/hugo", as:command, from:gh-r, rename-to:hugo, use:"*Linux*"
+    zplug "gohugoio/hugo", as:command, from:gh-r, rename-to:hugo, use:"*Linux*"
     ;;
   Darwin*)
-    zplug "spf13/hugo", as:command, from:gh-r, rename-to:hugo, use:"*macOS*"
+    zplug "gohugoio/hugo", as:command, from:gh-r, rename-to:hugo, use:"*macOS*"
     ;;
 esac
 if in-path -q go; then
