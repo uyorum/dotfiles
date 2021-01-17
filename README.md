@@ -4,14 +4,9 @@
 * Emacs
 * Zsh
 * tmux
-* GNU Screen
 * Vim
 * Git
 * Ruby(Gem)
-* Vimperator
-* Vimfx
-* Berkshelf
-* Test Kitchen
 * GNU Global
 
 ## Specific to OS
@@ -22,7 +17,6 @@
 * AutoHotkey
 
 ### Linux
-* Xmonad
 * Xmodmap
 
 ## Installation
