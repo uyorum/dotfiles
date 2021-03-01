@@ -13,5 +13,5 @@ bindkey '^N' history-beginning-search-forward-end
 
 bindkey '^]' anyframe-widget-cd-ghq-repository
 zle -N anyframe-widget-cd-workspace
-bindkey '^@' anyframe-widget-cd-workspace
+bindkey '^[' anyframe-widget-cd-workspace
 bindkey '^O' anyframe-widget-put-history

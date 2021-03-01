@@ -1,7 +1,4 @@
-# Don't load /etc/zprofile and /etc/zlogin
-setopt no_global_rcs
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
+export PATH="/sbin:$PATH"
 if [ -d "$HOME/bin" ]; then
   for dir in $(find $HOME/bin -type d); do
     export PATH="$dir:$PATH"
@@ -11,10 +8,7 @@ fi
 # common functions
 export PATH="$HOME/.zsh/lib:$PATH"
 
-export LANG=ja_JP.UTF-8
-export PATH="/sbin:$PATH"
 export LESS="-R"
-
 export EDITOR="emacsclient -nw"
 export VISUAL="$EDITOR"
 

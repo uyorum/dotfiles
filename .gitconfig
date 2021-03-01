@@ -20,7 +20,6 @@
   ba = branch -a
 [ghq]
   root = ~/src
-  root = ~/go/src
 [url "git@github.com:uyorum"]
   pushInsteadOf = https://github.com/uyorum
 [push]
