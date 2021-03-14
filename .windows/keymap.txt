@@ -2,11 +2,15 @@ status	key	command
 Composition	Hankaku/Zenkaku	IMEOff
 Conversion	Hankaku/Zenkaku	IMEOff
 Precomposition	Hankaku/Zenkaku	IMEOff
+Composition	F19	IMEOff
+Conversion	F19	IMEOff
+Precomposition	F19	IMEOff
 DirectInput	Eisu	IMEOn
 DirectInput	F13	IMEOn
 DirectInput	Hankaku/Zenkaku	IMEOn
 DirectInput	Hiragana	IMEOn
 DirectInput	Katakana	IMEOn
+DirectInput	F20	IMEOn
 Composition	Ctrl d	MoveCursorRight
 Composition	Ctrl l	MoveCursorRight
 Composition	Right	MoveCursorRight
@@ -136,10 +140,8 @@ Composition	Space	Convert
 Suggestion	Down	PredictAndConvert
 Composition	Tab	PredictAndConvert
 Conversion	Tab	PredictAndConvert
-Composition	Ctrl F1	IMEOff
-Conversion	Ctrl F1	IMEOff
-Precomposition	Ctrl F1	IMEOff
-DirectInput	Ctrl F2	IMEOn
+Composition	Ctrl j	Commit
+Conversion	Ctrl j	Commit
 Composition	ASCII	InsertCharacter
 Composition	Kanji	IMEOff
 Composition	OFF	IMEOff
