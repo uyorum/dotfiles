@@ -20,6 +20,7 @@ zplug "b4b4r07/zsh-gomi", as:command, use:bin/gomi, on:junegunn/fzf-bin
 zplug "Songmu/make2help", as:command, from:gh-r, rename-to:make2help
 zplug "gohugoio/hugo", as:command, from:gh-r, rename-to:hugo, use:"*Linux*.tar.gz"
 zplug "mollifier/anyframe", use:"anyframe.plugin.zsh", on:"junegunn/fzf-bin"
+zplug "direnv/direnv", as:command, from:gh-r, rename-to:direnv
 
 export ZSH_INIT_DIR=$HOME/.zsh/inits
 zplug "uyorum/zsh-init-loader", defer:3

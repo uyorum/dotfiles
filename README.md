@@ -19,6 +19,10 @@
 ### Linux
 * Xmodmap
 
+## Requirements
+* Zsh
+* Unzip
+
 ## Installation
 
 ```bash
