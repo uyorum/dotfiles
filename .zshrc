@@ -24,11 +24,12 @@ zplug "direnv/direnv", as:command, from:gh-r, rename-to:direnv
 
 export ZSH_INIT_DIR=$HOME/.zsh/inits
 zplug "uyorum/zsh-init-loader", defer:3
-zplug "${HOME}/.zshrc.local", from:local, defer:3, if:"[[ -e ${HOME}/.zshrc.local ]]"
 
 if ! zplug check; then
   zplug install
 fi
 zplug load
+
+[[ -e ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
 
 run-tmux
