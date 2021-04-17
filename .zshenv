@@ -9,8 +9,6 @@ fi
 export PATH="$HOME/.zsh/lib:$PATH"
 
 export LESS="-R"
-export EDITOR="emacsclient -nw"
-export VISUAL="$EDITOR"
 
 export FZF_DEFAULT_OPTS="--select-1 --exit-0 --reverse"
 
