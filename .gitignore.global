@@ -3,13 +3,17 @@ GPATH
 GRTAGS
 GTAGS
 
-.rbenv-gemsets
+# macOS
+.DS_Store
 
 # Direnv
 .envrc
 
+# Ruby
+.rbenv-gemsets
+
 # Golang
 *.test
 
-# macOS
-.DS_Store
+# Python
+venv

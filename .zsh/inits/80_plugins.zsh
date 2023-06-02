@@ -1,5 +1,5 @@
 # anyframe
-if zplug check mollifier/anyframe; then
+if which anyframe-action-execute >/dev/null 2>&1; then
   zstyle ":anyframe:selector:" use fzf
 
   # cd to ghq reposities

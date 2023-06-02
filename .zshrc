@@ -13,23 +13,7 @@ zplug "zsh-users/zsh-completions"
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/gem", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
-
-case $(uname -m) in
-  'aarch64')
-    # go get github.com/x-motemen/ghq
-    zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf, use:"*linux_arm8*"
-    zplug "mollifier/anyframe", use:"anyframe.plugin.zsh", on:"junegunn/fzf-bin"
-    zplug "gohugoio/hugo", as:command, from:gh-r, rename-to:hugo, use:"*Linux-ARM64.tar.gz"
-    zplug "direnv/direnv", as:command, from:gh-r, rename-to:direnv, use:"*linux-arm64"
-    ;;
-  *)
-    zplug "x-motemen/ghq", as:command, from:gh-r, rename-to:ghq
-    zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-    zplug "mollifier/anyframe", use:"anyframe.plugin.zsh", on:"junegunn/fzf-bin"
-    zplug "gohugoio/hugo", as:command, from:gh-r, rename-to:hugo, use:"*Linux*.tar.gz"
-    zplug "direnv/direnv", as:command, from:gh-r, rename-to:direnv
-    ;;
-esac
+zplug "mollifier/anyframe"
 
 export ZSH_INIT_DIR=$HOME/.zsh/inits
 zplug "uyorum/zsh-init-loader", defer:3

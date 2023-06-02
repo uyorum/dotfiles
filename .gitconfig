@@ -24,3 +24,5 @@
   pushInsteadOf = https://github.com/uyorum
 [push]
   default = simple
+[pull]
+  rebase = false
