@@ -31,18 +31,17 @@ Import this code:
 
 ## userChrome.css
 
-1. Access to `about:profile` and open profile directory.
+1. Access to `about:support` and open profile directory.
 1. Create `chrome/userChrome.css`
 
 ``` bash
 $ mkdir -p chrome
 $ cat <<EOF >>chrome/userChrome.css
-#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar>.toolbar-items {
-    opacity: 0;
-    pointer-events: none;
-}
-
-#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+#TabsToolbar,
+#PersonalToolbar,
+#BookmarksToolbar,
+#MenuToolbar,
+#tabbrowser-tabs {
     visibility: collapse !important;
 }
 
