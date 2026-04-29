@@ -28,3 +28,15 @@
 ```bash
 $ curl https://raw.githubusercontent.com/uyorum/dotfiles/master/bin/setup.sh | bash
 ```
+
+### For server-use
+
+```bash
+$ curl https://raw.githubusercontent.com/uyorum/dotfiles/master/bin/setup.sh | SERVER=1 bash
+```
+
+Only makes below links
+
+- Git
+- Vim
+- Tmux

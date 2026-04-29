@@ -55,6 +55,15 @@ make_sym_links() {
   done
 }
 
+# Make symbolic links for server-use from all files in $1 to $HOME
+make_sym_links_server() {
+  local dotfiles_dir="$1"
+
+  for f in .gitconfig .tmux.conf .vimrc; do
+    ln -s ${dotfiles_dir}/${f} ${HOME}
+  done
+}
+
 # Run post setup scripts
 exec_post_scripts() {
   local dotfiles_dir="$1"
@@ -111,6 +120,12 @@ main() {
   readonly DEST="$HOME"
 
   clone_dotfiles "$DEST"
+
+  if [[ ${SERVER} == 1 ]]; then
+    make_sym_links_server "$DEST/dotfiles"
+    exec_post_scripts "$DEST/dotfiles"
+    return $?
+  fi
 
   case $(uname) in
     Linux*)
