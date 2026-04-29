@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 install_path=$HOME/bin
 mkdir -p ${install_path}
 
